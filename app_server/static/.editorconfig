@@ -1,0 +1,3 @@
+[**.{css, js, ico, png, jpg, jpeg}]
+indent_style = tab
+tab_width = 4
