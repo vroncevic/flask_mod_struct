@@ -26,6 +26,9 @@ class User(Base):
 		method:
 			__init__ - Initial constructor
 			get_id - Getting id
+			is_authenticated - Authentication status
+			is_active - Getting status
+			is_anonymous - Getting info
 			__repr__ - Printable representation of the user
 	"""
 
@@ -65,6 +68,27 @@ class User(Base):
 		:type: int
 		"""
 		return self.id
+
+	def is_authenticated(self):
+		"""
+		:return: Authentication status
+		:type: bool
+		"""
+		return True
+
+	def is_active(self):
+		"""
+		:return: Getting status
+		:type: bool
+		"""
+		return True
+
+	def is_anonymous(self):
+		"""
+		:return: Getting info
+		:type: bool
+		"""
+		return False
 
 	def __repr__(self):
 		"""

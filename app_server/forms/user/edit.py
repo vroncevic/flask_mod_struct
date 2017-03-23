@@ -9,13 +9,13 @@ __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField
+from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Email, Length, EqualTo
 
-class UserRegister(FlaskForm):
+class UserEdit(FlaskForm):
 	"""
-	Define class UserRegister with attribute(s) and method(s).
-	User registration form.
+	Define class UserEdit with attribute(s) and method(s).
+	Edit user form.
 	It defines:
 		attribute:
 			fullname - User fullname
@@ -23,6 +23,7 @@ class UserRegister(FlaskForm):
 			email - User email contact
 			password - User password
 			confirm - User password confirm
+			admin - User admin (True/False)
 		method:
 			None
 	"""
@@ -46,3 +47,4 @@ class UserRegister(FlaskForm):
 			DataRequired(), EqualTo("password", message="Passwords must match.")
 		]
 	)
+	admin = BooleanField("Admin")

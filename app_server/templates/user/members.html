@@ -1,4 +1,17 @@
 {% extends "_base.html" %}
 {% block content %}
-	<h1>Welcome to members page!</h1>
+	<table class="table table-striped table-bordered">
+		<tr>
+			<th>Fullname</th>
+			<th>Username</th>
+			<th>Email</th>
+		</tr>
+		{% for data in table %}
+			<tr>
+				<td> {{ data.fullname }} </td>
+				<td> {{ data.username }} </td>
+				<td> {{ data.email }} </td>
+			</tr>
+		{% endfor %}
+	</table>
 {% endblock %}

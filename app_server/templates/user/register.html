@@ -5,7 +5,7 @@
 	<h1>Please Register</h1>
 	</header>
 	<br>
-	<form class="form" role="form" method="post" action="">
+	<form class="form" method="post" name="form" action="">
 		{{ form.csrf_token }}
 		{{ form.hidden_tag() }}
 		{{ wtf.form_errors(form, hiddens="only") }}
@@ -17,7 +17,7 @@
 			{{ wtf.form_field(form.confirm) }}
 			<button class="btn btn-success" type="submit">Register!</button>
 			<br><br>
-			<p>Already have an account? <a href="{{ url_for('user.login') }}">Sign in</a>.</p>
+			<p>Already have an account? <a href="/login/">Sign in</a>.</p>
 		</div>
 	</form>
 {% endblock content %}

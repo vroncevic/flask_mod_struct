@@ -17,6 +17,7 @@ from manage_commands.create_data import CreateData
 from manage_commands.create_superuser import CreateSuperUser
 from manage_commands.run_coverage import RunCoverage
 from manage_commands.run_test import RunTest
+from manage_commands.orm_test import ORMTest
 
 COV = coverage.coverage(
 	branch=True,
@@ -41,6 +42,7 @@ manager.add_command("create_data", CreateData(db))
 manager.add_command("createsuperuser", CreateSuperUser(db))
 manager.add_command("test", RunTest())
 manager.add_command("coverage", RunCoverage(COV))
+manager.add_command("test_query", ORMTest())
 
 # python manage.py create_db
 # python manage.py db init

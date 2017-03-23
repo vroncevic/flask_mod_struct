@@ -14,11 +14,11 @@ from wtforms.validators import DataRequired, Email
 
 class UserLogin(FlaskForm):
 	"""
-	Define class AdminLogin with attribute(s) and method(s).
+	Define class UserLogin with attribute(s) and method(s).
 	User login form (email and password).
 	It defines:
 		attribute:
-			email - User email
+			email - User contact email
 			password - User password
 		method:
 			None
