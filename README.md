@@ -1,4 +1,4 @@
-Flask Monolit Project
+Flask Monolith Project
 ================================================================================
 
 The README is used to introduce the modules and provide instructions on
