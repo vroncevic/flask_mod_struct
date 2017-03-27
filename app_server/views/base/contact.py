@@ -21,6 +21,7 @@ class Contact(View):
 		method:
 			dispatch_request - Method view for contact page
 	"""
+
 	def dispatch_request(self):
 		"""
 		:return: Value of the view or error handler

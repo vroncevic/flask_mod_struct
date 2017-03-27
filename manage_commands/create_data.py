@@ -16,7 +16,7 @@ class CreateData(Command):
 	Create initial data and insert to database.
 	It defines:
 		attribute:
-			db - SQLAlchemy integration object
+			__db - SQLAlchemy integration object
 		method:
 			__init__ - Initial constructor
 			run - Create initial data and insert to database
@@ -28,7 +28,7 @@ class CreateData(Command):
 		:type: SQLAlchemy
 		"""
 		super(CreateData, self).__init__()
-		self.db = db
+		self.__db = db
 
 	def run(self):
-		pass
+		print("Not implemented")

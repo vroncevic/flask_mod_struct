@@ -9,21 +9,26 @@ __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
 from flask_testing import TestCase
-from app_server import app, db
+
+from app_server import app, db, bcrypt
 from app_server.models.model_user import User
 
 class BaseTestCase(TestCase):
 
 	def create_app(self):
-		app.config.from_object("app_server.configuration.TestingConfig")
+		app.config.from_object("app_server.configuration.TestConfig")
 		return app
 
 	def setUp(self):
 		db.create_all()
-		user = User(
-			fullname="Flask Administrator", username="admin",
-			password="admin", email="admin@admin.com", admin=True
+		admin_password = bcrypt.generate_password_hash(
+			"admin", app.config.get('BCRYPT_LOG_ROUNDS')
 		)
+		user = User(
+			username=admin_password, password="admin", admin=True
+		)
+		user.fullname="Flask Administrator"
+		user.email="admin@admin.com"
 		db.session.add(user)
 		db.session.commit()
 

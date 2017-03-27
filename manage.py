@@ -49,6 +49,7 @@ manager.add_command("test_query", ORMTest())
 # python manage.py db migrate
 # python manage.py createsuperuser
 # python manage.py create_data
+# python manage.py test_query
 # python manage.py runserver
 
 if __name__ == "__main__":

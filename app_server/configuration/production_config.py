@@ -8,7 +8,9 @@ __maintainer__ = "Vladimir Roncevic"
 __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
-class ProductionConfig(object):
+from app_server.configuration import BaseConfig
+
+class ProductionConfig(BaseConfig):
 	"""
 	Define class ProductionConfig with attribute(s) and method(s).
 	Production configuration class.
@@ -22,7 +24,12 @@ class ProductionConfig(object):
 			None
 	"""
 
-	SECRET_KEY = "my_precious"
-	DEBUG = False
-	SQLALCHEMY_DATABASE_URI = "postgresql://localhost/example"
-	DEBUG_TB_ENABLED = False
+	DB_USER = "mydbuser"
+	DB_PASSWORD = "mydbpassword"
+	DB_HOST = "127.0.0.1"
+	DB_PORT = 5432
+	DB_NAME = "manage_users"
+	DB_DIALECT = "postgresql"
+	SQLALCHEMY_DATABASE_URI = "{0}://{1}:{2}@{3}:{4}/{5}".format(
+		DB_DIALECT, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME
+	)

@@ -12,8 +12,8 @@ from flask.views import View
 from flask import render_template, url_for, redirect, flash, request
 from flask_login import login_user, session
 
-from app_server import app, db, bcrypt
-from app_server.forms.user.register import RegisterForm
+from app_server import db
+from app_server.forms.user.register import UserRegisterForm
 from app_server.models.model_user import User
 
 class Register(View):
@@ -34,15 +34,13 @@ class Register(View):
 		:return: Value of the view or error handler
 		:rtype: View
 		"""
-		form = RegisterForm(request.form)
+		form = UserRegisterForm(request.form)
 		if form.validate_on_submit():
-			user_password = bcrypt.generate_password_hash(
-				form.data, app.config.get('BCRYPT_LOG_ROUNDS')
-			)
 			user = User(
-				fullname=form.fullname.data, username=form.username.data,
-				email=form.email.data, password=user_password
+				username=form.username.data, password=form.password.data
 			)
+			user.fullname=form.fullname.data
+			user.email=form.email.data
 			db.session.add(user)
 			db.session.commit()
 			login_user(user)

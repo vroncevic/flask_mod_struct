@@ -12,10 +12,10 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField
 from wtforms.validators import DataRequired, Email, Length, EqualTo
 
-class RegisterForm(FlaskForm):
+class UserRegisterForm(FlaskForm):
 	"""
-	Define class RegisterForm with attribute(s) and method(s).
-	User registration form.
+	Define class UserRegisterForm with attribute(s) and method(s).
+	User registration form (creating new user - public operation).
 	It defines:
 		attribute:
 			fullname - User fullname

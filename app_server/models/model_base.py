@@ -13,12 +13,12 @@ from app_server import db
 class Base(db.Model):
 	"""
 	Define class Base with attribute(s) and method(s).
-	
+	Abstract base data model.
 	It defines:
 		attribute:
 			id - Abstract Table id
-			created - Abstract date of creation
-			modified - Abstract date of modification
+			created - Date of creation
+			modified - Date of modification
 		method:
 			None
 	"""

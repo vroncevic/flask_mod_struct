@@ -9,6 +9,7 @@ __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
 from flask_script import Command
+
 import unittest
 
 class RunTest(Command):

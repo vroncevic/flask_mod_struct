@@ -31,7 +31,7 @@ class Administration(View):
 	def dispatch_request(self):
 		"""
 		:return: Value of the view or error handler
-		:rtype:
+		:rtype: View
 		"""
 		table_data = db.session.query(User).all()
 		return render_template("user/administration.html", table=table_data)

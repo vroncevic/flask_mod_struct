@@ -9,12 +9,13 @@ __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
 from flask_script import Command
+
 from app_server.tests.sqlalchemy_query import SQLAlchemyQuery
 
 class ORMTest(Command):
 	"""
 	Define class ORMTest with attribute(s) and method(s).
-	ORM tests.
+	Command for ORM tests.
 	It defines:
 		attribute:
 			__query - Run query tests
@@ -29,3 +30,4 @@ class ORMTest(Command):
 
 	def run(self):
 		self.__query.query_all()
+		print("Done")

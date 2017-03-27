@@ -9,6 +9,7 @@ __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
 from flask_script import Command
+
 from os.path import dirname, abspath, join
 import unittest
 
@@ -18,7 +19,7 @@ class RunCoverage(Command):
 	Create coverage reports.
 	It defines:
 		attribute:
-			db - Coverage integration object
+			cov - Coverage integration object
 		method:
 			__init__ - Initial constructor
 			run - Create coverage reports
@@ -33,6 +34,10 @@ class RunCoverage(Command):
 		self.cov = cov
 
 	def run(self):
+		"""
+		:return: Integer status
+		:rtype: int
+		"""
 		tests = unittest.TestLoader().discover("app_server/tests")
 		result = unittest.TextTestRunner(verbosity=2).run(tests)
 		if result.wasSuccessful():

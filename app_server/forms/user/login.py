@@ -12,10 +12,10 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField
 from wtforms.validators import DataRequired, Email
 
-class UserLogin(FlaskForm):
+class UserLoginForm(FlaskForm):
 	"""
-	Define class UserLogin with attribute(s) and method(s).
-	User login form (email and password).
+	Define class UserLoginForm with attribute(s) and method(s).
+	User login form (by email and password).
 	It defines:
 		attribute:
 			email - User contact email
@@ -24,5 +24,5 @@ class UserLogin(FlaskForm):
 			None
 	"""
 
-	email = StringField('Email Address', [DataRequired(), Email()])
-	password = PasswordField('Password', [DataRequired()])
+	email = StringField("Email Address", [DataRequired(), Email()])
+	password = PasswordField("Password", [DataRequired()])

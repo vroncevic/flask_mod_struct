@@ -12,9 +12,9 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, Email, Length, EqualTo
 
-class UserEdit(FlaskForm):
+class UserEditForm(FlaskForm):
 	"""
-	Define class UserEdit with attribute(s) and method(s).
+	Define class UserEditForm with attribute(s) and method(s).
 	Edit user form.
 	It defines:
 		attribute:

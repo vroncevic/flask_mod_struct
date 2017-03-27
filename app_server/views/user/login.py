@@ -13,7 +13,7 @@ from flask import render_template, url_for, redirect, flash, request
 from flask_login import login_user, session
 
 from app_server import bcrypt
-from app_server.forms.user.login import UserLogin
+from app_server.forms.user.login import UserLoginForm
 from app_server.models.model_user import User
 
 class Login(View):
@@ -34,7 +34,7 @@ class Login(View):
 		:return: Value of the view or error handler
 		:rtype: View
 		"""
-		form = UserLogin(request.form)
+		form = UserLoginForm(request.form)
 		if form.validate_on_submit():
 			user = User.query.filter_by(email=form.email.data).first()
 			password_ok = bcrypt.check_password_hash(

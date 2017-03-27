@@ -13,10 +13,10 @@ from flask_script import Command
 class CreateDatabase(Command):
 	"""
 	Define class CreateDatabase with attribute(s) and method(s).
-	Create database with tables defined by models.
+	Create database by defined models.
 	It defines:
 		attribute:
-			db - SQLAlchemy integration object
+			__db - SQLAlchemy integration object
 		method:
 			__init__ - Initial constructor
 			run - Create database with tables.
@@ -28,7 +28,8 @@ class CreateDatabase(Command):
 		:type: SQLAlchemy
 		"""
 		super(CreateDatabase, self).__init__()
-		self.db = db
+		self.__db = db
 
 	def run(self):
-		self.db.create_all()
+		self.__db.create_all()
+		print("Done")

@@ -14,7 +14,7 @@ from flask_login import login_required
 
 from app_server import app, db, bcrypt
 from app_server.models.model_user import User
-from app_server.forms.user.edit import UserEdit
+from app_server.forms.user.edit import UserEditForm
 
 class Edit(MethodView):
 	"""
@@ -38,7 +38,7 @@ class Edit(MethodView):
 		:return: Value of the view or error handler
 		:rtype:
 		"""
-		form = UserEdit(request.form)
+		form = UserEditForm(request.form)
 		if form.validate_on_submit():
 			user = User.query.filter_by(username=username).first()
 			user.fullname = request.form["fullname"]

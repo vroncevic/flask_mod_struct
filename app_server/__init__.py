@@ -17,17 +17,11 @@ from flask_debugtoolbar import DebugToolbarExtension
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(
-	__name__,
-	template_folder="templates",
-	static_folder="static"
-)
-
+app = Flask(__name__, template_folder="templates", static_folder="static")
 app_settings = os.getenv(
 	"APP_SETTINGS",
 	"app_server.configuration.development_config.DevelopmentConfig"
 )
-
 app.config.from_object(app_settings)
 login_manager = LoginManager()
 login_manager.init_app(app)
