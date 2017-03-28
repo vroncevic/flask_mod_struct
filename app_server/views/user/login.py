@@ -38,7 +38,7 @@ class Login(View):
 		if form.validate_on_submit():
 			user = User.query.filter_by(email=form.email.data).first()
 			password_ok = bcrypt.check_password_hash(
-				user.password, request.form["password"]
+				user.password, request.form.get("password")
 			)
 			if user and password_ok:
 				login_user(user)

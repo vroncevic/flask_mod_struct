@@ -38,17 +38,25 @@ class Edit(MethodView):
 		:return: Value of the view or error handler
 		:rtype:
 		"""
+		user = User.query.filter_by(username=username).first()
 		form = UserEditForm(request.form)
+		form.fullname.data = user.fullname
+		form.username.data = user.username
+		form.email.data = user.email
+		if user.admin:
+			form.admin.data = True
+		else:
+			form.admin.data = False
 		if form.validate_on_submit():
-			user = User.query.filter_by(username=username).first()
-			user.fullname = request.form["fullname"]
-			user.username = request.form["username"]
-			user.email = request.form["email"]
-			user.password = bcrypt.generate_password_hash(
-				request.form["password"], app.config.get('BCRYPT_LOG_ROUNDS')
-			)
-			user.confirm = request.form["confirm"]
-			if request.form["admin"] == "y":
+			user.fullname = request.form.get("fullname")
+			user.username = request.form.get("username")
+			user.email = request.form.get("email")
+			if request.form.get("password"):
+				user.password = bcrypt.generate_password_hash(
+					request.form.get("password"),
+					app.config.get("BCRYPT_LOG_ROUNDS")
+				)
+			if request.form.get("admin"):
 				user.admin = True
 			else:
 				user.admin = False

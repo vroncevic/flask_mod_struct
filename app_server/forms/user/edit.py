@@ -38,13 +38,9 @@ class UserEditForm(FlaskForm):
 		"Email Address",
 		validators=[DataRequired(), Email(message=None), Length(min=6, max=80)]
 	)
-	password = PasswordField(
-		"Password", validators=[DataRequired(), Length(min=6, max=32)]
-	)
+	password = PasswordField("Password")
 	confirm = PasswordField(
 		"Confirm password",
-		validators=[
-			DataRequired(), EqualTo("password", message="Passwords must match.")
-		]
+		validators=[EqualTo("password", message="Passwords must match.")]
 	)
-	admin = BooleanField("Admin")
+	admin = BooleanField("Admin", default=False)
