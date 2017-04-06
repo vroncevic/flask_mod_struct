@@ -8,15 +8,17 @@ __maintainer__ = "Vladimir Roncevic"
 __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
-class BaseConfig(object):
+from app_server.configuration.database import BaseConfig
+
+class TestConfig(BaseConfig):
 	"""
-	Define class BaseConfig with attribute(s) and method(s).
-	Base initial configuration class.
+	Define class TestConfig with attribute(s) and method(s).
+	Testing configuration setup.
 	It defines:
 		attribute:
-			SECRET_KEY - Development key for session accessing
+			SQLALCHEMY_DATABASE_URI - Set DB URI
 		method:
 			None
 	"""
 
-	SECRET_KEY = "my_precious"
+	SQLALCHEMY_DATABASE_URI = "sqlite:///test_phase.sqlite"

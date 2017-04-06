@@ -9,8 +9,10 @@ __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
 from flask.views import View
-from flask import render_template, url_for, redirect, flash, request
-from flask_login import login_user, session
+from flask import (
+	session, render_template, url_for, redirect, flash, request
+)
+from flask_login import login_user
 
 from app_server import bcrypt
 from app_server.forms.user.login import UserLoginForm

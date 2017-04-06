@@ -8,7 +8,8 @@ __maintainer__ = "Vladimir Roncevic"
 __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
-from app_server.configuration.development_config import DevelopmentConfig
+from app_server.configuration.database.development_config import \
+	DevelopmentConfig
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker

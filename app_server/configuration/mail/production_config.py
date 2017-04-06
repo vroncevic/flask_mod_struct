@@ -8,15 +8,21 @@ __maintainer__ = "Vladimir Roncevic"
 __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
-class BaseConfig(object):
+from app_server.configuration.mail import BaseConfig
+
+class ProductionConfig(BaseConfig):
 	"""
-	Define class BaseConfig with attribute(s) and method(s).
-	Base initial configuration class.
+	Define class DevelopmentConfig with attribute(s) and method(s).
+	Define mail production email.
 	It defines:
 		attribute:
-			SECRET_KEY - Development key for session accessing
+			MAIL_USERNAME - Mail username
+			MAIL_PASSWORD - Mail password
+			MAIL_RECIPIENT - Mail username
 		method:
 			None
 	"""
 
-	SECRET_KEY = "my_precious"
+	MAIL_USERNAME = ""
+	MAIL_PASSWORD = ""
+	MAIL_RECIPIENT = ""

@@ -11,12 +11,16 @@ __status__ = "Updated"
 class BaseConfig(object):
 	"""
 	Define class BaseConfig with attribute(s) and method(s).
-	Base initial configuration class.
+	Base initial configuration for mail service.
 	It defines:
 		attribute:
-			SECRET_KEY - Development key for session accessing
+			MAIL_SERVER - Mail server (default: Google)
+			MAIL_PORT - Mail port
+			MAIL_USE_SSL - Use SSL (True/False)
 		method:
 			None
 	"""
 
-	SECRET_KEY = "my_precious"
+	MAIL_SERVER = "smtp.gmail.com"
+	MAIL_PORT = 465
+	MAIL_USE_SSL = True

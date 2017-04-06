@@ -8,25 +8,21 @@ __maintainer__ = "Vladimir Roncevic"
 __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
-from app_server.configuration import BaseConfig
+from app_server.configuration.mail import BaseConfig
 
 class DevelopmentConfig(BaseConfig):
 	"""
 	Define class DevelopmentConfig with attribute(s) and method(s).
-	
+	Define mail development email.
 	It defines:
 		attribute:
-			DEBUG - Enable/Disable debug option
-			WTF_CSRF_ENABLED - Secure forms
-			DEBUG_TB_ENABLED - Flask debug toolbar's
-			DEBUG_TB_INTERCEPT_REDIRECTS - Should intercept redirects?
-			BCRYPT_LOG_ROUNDS - for bcrypt hashing utilities
+			MAIL_USERNAME - Mail username
+			MAIL_PASSWORD - Mail password
+			MAIL_RECIPIENT - Mail username
 		method:
 			None
 	"""
 
-	DEBUG = True
-	WTF_CSRF_ENABLED = False
-	DEBUG_TB_ENABLED = True
-	DEBUG_TB_INTERCEPT_REDIRECTS = False
-	BCRYPT_LOG_ROUNDS = 4
+	MAIL_USERNAME = "g.sender@gmail.com"
+	MAIL_PASSWORD = "g_sender_password"
+	MAIL_RECIPIENT = "m.receiver@outlook.com"

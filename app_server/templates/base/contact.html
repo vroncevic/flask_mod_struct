@@ -1,8 +1,35 @@
 {% extends "_base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %} Contact {% endblock %}
 {% block content %}
-<div class="body-content">
-	<div class="row">
+	<header class="content-header">
 		<h1>Contact</h1>
-	</div>
-</div>
-{% endblock %}
+	</header>
+	<br>
+	{% for message in form.name.errors %}
+		<div class="flash">{{ message }}</div>
+	{% endfor %}
+	{% for message in form.email.errors %}
+		<div class="flash">{{ message }}</div>
+	{% endfor %}
+	{% for message in form.subject.errors %}
+		<div class="flash">{{ message }}</div>
+	{% endfor %}
+	{% for message in form.message.errors %}
+		<div class="flash">{{ message }}</div>
+	{% endfor %}
+	<form class="form" method="post" name="form" action="">
+		{{ form.csrf_token }}
+		{{ form.hidden_tag() }}
+		{{ wtf.form_errors(form, hiddens="only") }}
+		<div class="col-lg-4 col-sm-4">
+			{{ wtf.form_field(form.name) }}
+			{{ wtf.form_field(form.email) }}
+			{{ wtf.form_field(form.subject) }}
+			{{ wtf.form_field(form.message) }}
+			<br>
+			<button class="btn btn-success" type="submit">Send</button>
+			<br>
+		</div>
+	</form>
+{% endblock content %}

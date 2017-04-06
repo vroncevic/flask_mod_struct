@@ -15,7 +15,7 @@ from flask_login import current_user
 from app_server import bcrypt
 from app_server.forms.user.login import UserLoginForm
 from app_server.models.model_user import User
-from app_server.tests.base import BaseTestCase
+from app_server.tests import BaseTestCase
 
 class TestUserBlueprint(BaseTestCase):
 

@@ -9,7 +9,7 @@ __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
 import unittest
-from app_server.tests.base import BaseTestCase
+from app_server.tests import BaseTestCase
 
 class TestMainBlueprint(BaseTestCase):
 

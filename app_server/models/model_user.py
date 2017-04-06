@@ -11,7 +11,7 @@ __status__ = "Updated"
 import datetime
 
 from app_server import app, db, bcrypt
-from app_server.models.model_base import Base
+from app_server.models import Base
 
 class User(Base):
 	"""

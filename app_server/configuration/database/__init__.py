@@ -11,12 +11,12 @@ __status__ = "Updated"
 class BaseConfig(object):
 	"""
 	Define class BaseConfig with attribute(s) and method(s).
-	Base initial configuration class.
+	Base initial configuration for database.
 	It defines:
 		attribute:
-			SECRET_KEY - Development key for session accessing
+			SQLALCHEMY_TRACK_MODIFICATIONS - Requires extra memory (True)
 		method:
 			None
 	"""
 
-	SECRET_KEY = "my_precious"
+	SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -12,13 +12,21 @@ from app_server.configuration import BaseConfig
 
 class TestConfig(BaseConfig):
 	"""
-	Define class TestConfig with attribute(s) and method(s).
-	Testing configuration setup.
+	Define class DevelopmentConfig with attribute(s) and method(s).
+
 	It defines:
 		attribute:
-			SQLALCHEMY_DATABASE_URI - Set DB URI
+			DEBUG - Enable/Disable debug option
+			WTF_CSRF_ENABLED - Secure forms
+			DEBUG_TB_ENABLED - Flask debug toolbar's
+			DEBUG_TB_INTERCEPT_REDIRECTS - Should intercept redirects?
+			BCRYPT_LOG_ROUNDS - for bcrypt hashing utilities
 		method:
 			None
 	"""
 
-	SQLALCHEMY_DATABASE_URI = "sqlite:///test_phase.sqlite"
+	DEBUG = True
+	WTF_CSRF_ENABLED = False
+	DEBUG_TB_ENABLED = True
+	DEBUG_TB_INTERCEPT_REDIRECTS = True
+	BCRYPT_LOG_ROUNDS = 4

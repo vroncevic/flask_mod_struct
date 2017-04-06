@@ -16,18 +16,30 @@ from flask_bootstrap import Bootstrap
 from flask_debugtoolbar import DebugToolbarExtension
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
 app_settings = os.getenv(
 	"APP_SETTINGS",
 	"app_server.configuration.development_config.DevelopmentConfig"
 )
+app_settings_database = os.getenv(
+	"APP_SETTINGS_DATABASE",
+	"app_server.configuration.database.development_config.DevelopmentConfig"
+)
+app_settings_mail = os.getenv(
+	"APP_SETTINGS_MAIL",
+	"app_server.configuration.mail.development_config.DevelopmentConfig"
+)
 app.config.from_object(app_settings)
+app.config.from_object(app_settings_database)
+app.config.from_object(app_settings_mail)
 login_manager = LoginManager()
 login_manager.init_app(app)
 bcrypt = Bcrypt(app)
 toolbar = DebugToolbarExtension(app)
 bootstrap = Bootstrap(app)
+mail = Mail(app)
 db = SQLAlchemy(app)
 
 from app_server.views.base import base
