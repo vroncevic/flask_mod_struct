@@ -29,5 +29,6 @@ class ORMTest(Command):
 		self.__query = SQLAlchemyQuery()
 
 	def run(self):
+		print("Run ORM tests")
 		self.__query.query_all()
 		print("Done")

@@ -31,5 +31,6 @@ class DropDatabase(Command):
 		self.__db = db
 
 	def run(self):
+		print("Drop database/tables")
 		self.__db.drop_all()
 		print("Done")

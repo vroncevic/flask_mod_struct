@@ -31,5 +31,6 @@ class CreateDatabase(Command):
 		self.__db = db
 
 	def run(self):
+		print("Create database/tables")
 		self.__db.create_all()
 		print("Done")
