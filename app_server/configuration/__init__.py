@@ -11,7 +11,7 @@ __status__ = "Updated"
 class BaseConfig(object):
 	"""
 	Define class BaseConfig with attribute(s) and method(s).
-	Base initial configuration class.
+	Base initial configuration.
 	It defines:
 		attribute:
 			SECRET_KEY - Development key for session accessing

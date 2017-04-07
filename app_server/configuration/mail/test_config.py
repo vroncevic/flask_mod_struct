@@ -13,7 +13,7 @@ from app_server.configuration.mail import BaseConfig
 class TestConfig(BaseConfig):
 	"""
 	Define class DevelopmentConfig with attribute(s) and method(s).
-	Define mail test email.
+	Define mail test configuration.
 	It defines:
 		attribute:
 			MAIL_USERNAME - Mail username

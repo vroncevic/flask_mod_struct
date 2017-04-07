@@ -16,9 +16,10 @@ from app_server.models import Base
 class User(Base):
 	"""
 	Define class User with attribute(s) and method(s).
-	Model User for authentication and authorization.
+	Define model user for authentication and authorization.
 	It defines:
 		attribute:
+			__tablename__ - Table name
 			fullname - First and last name
 			username - User authentication name
 			password - User authentication password

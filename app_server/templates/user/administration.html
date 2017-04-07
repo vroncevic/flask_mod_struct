@@ -8,15 +8,15 @@
 			<th>Email</th>
 			<th>Admin</th>
 		</tr>
-		{% for data in table %}
+		{% for item in data %}
 			<tr>
-				<td> {{ data.id }} </td>
-				<td> {{ data.fullname }} </td>
+				<td> {{ item.id }} </td>
+				<td> {{ item.fullname }} </td>
 				<td>
-					<a href="/edit/{{ data.username }}"> {{data.username }}</a>
+					<a href="/edit/{{ item.username }}"> {{ item.username }}</a>
 				</td>
-				<td> {{ data.email }} </td>
-				<td> {{ data.admin }} </td>
+				<td> {{ item.email }} </td>
+				<td> {{ item.admin }} </td>
 			</tr>
 		{% endfor %}
 	</table>

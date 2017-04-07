@@ -14,7 +14,7 @@ from flask import render_template
 class Home(View):
 	"""
 	Define class Home with attribute(s) and method(s).
-	View for home page.
+	Define view for home page.
 	It defines:
 		attribute:
 			None

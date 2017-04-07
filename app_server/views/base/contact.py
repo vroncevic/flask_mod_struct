@@ -18,7 +18,7 @@ from app_server.forms.base.contact import ContactForm
 class Contact(View):
 	"""
 	Define class Contact with attribute(s) and method(s).
-	View for contact page.
+	Define view for contact page.
 	It defines:
 		attribute:
 			methods - Handler methods

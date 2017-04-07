@@ -8,7 +8,6 @@ __maintainer__ = "Vladimir Roncevic"
 __email__ = "elektron.ronca@gmail.com"
 __status__ = "Updated"
 
-import sys
 from getpass import getpass
 
 from flask_script import Command
@@ -36,19 +35,10 @@ class CreateSuperUser(Command):
 		self.__db = db
 
 	def run(self):
-		print("Create superuser account")
-		if sys.version_info < (3, 0, 0):
-			# noinspection PyCompatibility
-			username = raw_input("Insert superuser username: ")
-			# noinspection PyCompatibility
-			superuser_email = raw_input("Insert superuser email: ")
-		elif sys.version_info >= (3, 0, 0):
-			username = input("Insert superuser username: ")
-			superuser_email = input("Insert superuser email: ")
-		else:
-			username = "admin"
-			superuser_email = "admin@admin.com"
-		superuser_password = getpass("Insert superuser password: ")
+		print("Creating superuser account")
+		username = input("Insert username of superuser: ")
+		superuser_email = input("Insert email of superuser: ")
+		superuser_password = getpass("Insert password of superuser: ")
 		admin = User(
 			username=username, password=superuser_password, admin=True
 		)
@@ -57,3 +47,4 @@ class CreateSuperUser(Command):
 		self.__db.session.add(admin)
 		self.__db.session.commit()
 		print("Done")
+		return 0

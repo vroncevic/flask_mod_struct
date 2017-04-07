@@ -15,7 +15,7 @@ from flask_login import logout_user, login_required
 class Logout(View):
 	"""
 	Define class Logout with attribute(s) and method(s).
-	Logout view.
+	Define logout view.
 	It defines:
 		attribute:
 			decorators - List of decorators

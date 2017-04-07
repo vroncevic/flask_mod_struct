@@ -19,7 +19,7 @@ from app_server.forms.user.edit import UserEditForm
 class Edit(MethodView):
 	"""
 	Define class Edit with attribute(s) and method(s).
-	View for edit user data.
+	Define view for edit user data.
 	It defines:
 		attribute:
 			decorators - List of decorators
@@ -28,15 +28,15 @@ class Edit(MethodView):
 			dispatch_request - Method view for edit user data
 	"""
 
-	decorators = [login_required]
 	methods = ["GET", "POST"]
+	decorators = [login_required]
 
 	def dispatch_request(self, username):
 		"""
 		:param username: System username
 		:type username: str
 		:return: Value of the view or error handler
-		:rtype:
+		:rtype: View
 		"""
 		user = User.query.filter_by(username=username).first()
 		form = UserEditForm(request.form)

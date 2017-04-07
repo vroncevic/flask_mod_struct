@@ -32,3 +32,4 @@ class CreateData(Command):
 
 	def run(self):
 		print("Not implemented")
+		return 0

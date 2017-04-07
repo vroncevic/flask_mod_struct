@@ -34,3 +34,4 @@ class CreateDatabase(Command):
 		print("Create database/tables")
 		self.__db.create_all()
 		print("Done")
+		return 0

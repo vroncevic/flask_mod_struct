@@ -14,7 +14,7 @@ from flask import render_template
 class About(View):
 	"""
 	Define class About with attribute(s) and method(s).
-	View for about page.
+	Define view for about page.
 	It defines:
 		attribute:
 			None

@@ -21,7 +21,7 @@ from app_server.models.model_user import User
 class Register(View):
 	"""
 	Define class Register with attribute(s) and method(s).
-	Register view for new user (standard user).
+	Define register view for new user (standard user).
 	It defines:
 		attribute:
 			methods - Handler methods

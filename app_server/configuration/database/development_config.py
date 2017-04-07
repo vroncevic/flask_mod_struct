@@ -13,7 +13,7 @@ from app_server.configuration.database import BaseConfig
 class DevelopmentConfig(BaseConfig):
 	"""
 	Define class DevelopmentConfig with attribute(s) and method(s).
-	Development configuration class.
+	Development database configuration.
 	It defines:
 		attribute:
 			DB_USER - Database connection username

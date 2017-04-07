@@ -18,7 +18,7 @@ from app_server.models.model_user import User
 class Administration(View):
 	"""
 	Define class Administration with attribute(s) and method(s).
-	Administration view (list of all users).
+	Define administration view (list of all users).
 	It defines:
 		attribute:
 			decorators - List of decorators
@@ -33,5 +33,5 @@ class Administration(View):
 		:return: Value of the view or error handler
 		:rtype: View
 		"""
-		table_data = db.session.query(User).all()
-		return render_template("user/administration.html", table=table_data)
+		data_view = db.session.query(User).all()
+		return render_template("user/administration.html", data=data_view)

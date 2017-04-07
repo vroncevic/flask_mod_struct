@@ -13,7 +13,7 @@ from app_server.configuration.mail import BaseConfig
 class ProductionConfig(BaseConfig):
 	"""
 	Define class DevelopmentConfig with attribute(s) and method(s).
-	Define mail production email.
+	Define mail production configuration.
 	It defines:
 		attribute:
 			MAIL_USERNAME - Mail username

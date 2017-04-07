@@ -13,7 +13,7 @@ from app_server.configuration.database import BaseConfig
 class TestConfig(BaseConfig):
 	"""
 	Define class TestConfig with attribute(s) and method(s).
-	Testing configuration setup.
+	Testing database configuration.
 	It defines:
 		attribute:
 			SQLALCHEMY_DATABASE_URI - Set DB URI

@@ -15,7 +15,7 @@ from wtforms.validators import DataRequired, Email, Length, EqualTo
 class UserEditForm(FlaskForm):
 	"""
 	Define class UserEditForm with attribute(s) and method(s).
-	Edit user form.
+	Define edit user form (administrator).
 	It defines:
 		attribute:
 			fullname - User fullname
@@ -28,19 +28,14 @@ class UserEditForm(FlaskForm):
 			None
 	"""
 
-	fullname = StringField(
-		"Fullname", validators=[Length(min=4, max=72)]
-	)
-	username = StringField(
-		"Username", validators=[Length(min=4, max=32)]
-	)
+	fullname = StringField("Fullname", validators=[Length(min=4, max=72)])
+	username = StringField("Username", validators=[Length(min=4, max=32)])
 	email = StringField(
 		"Email Address",
-		validators=[DataRequired(), Email(message=None), Length(min=6, max=80)]
+		validators=[DataRequired(), Email(), Length(min=6, max=80)]
 	)
 	password = PasswordField("Password")
 	confirm = PasswordField(
-		"Confirm password",
-		validators=[EqualTo("password", message="Passwords must match.")]
+		"Confirm password", validators=[EqualTo("password")]
 	)
 	admin = BooleanField("Admin", default=False)

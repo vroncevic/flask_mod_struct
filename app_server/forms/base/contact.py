@@ -27,19 +27,9 @@ class ContactForm(FlaskForm):
 			None
 	"""
 
-	name = StringField(
-		"Name", validators=[DataRequired("Please enter your name!")]
-	)
-	email = StringField(
-		"Email", validators=[
-			DataRequired("Please enter your email address!"),
-			Email("Please enter your email address!")
-		]
-	)
-	subject = StringField(
-		"Subject", validators=[DataRequired("Please enter a subject!")]
-	)
+	name = StringField("Name", validators=[DataRequired()])
+	email = StringField("Email", validators=[DataRequired(), Email()])
+	subject = StringField("Subject", validators=[DataRequired()])
 	message = StringField(
-		"Message", widget=TextArea(),
-		validators=[DataRequired("Please enter a message!")]
+		"Message", widget=TextArea(), validators=[DataRequired()]
 	)

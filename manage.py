@@ -24,7 +24,7 @@ COV = coverage.coverage(
 	include="app_server/*",
 	omit=[
 		"app_server/tests/*",
-		"app_server/configuration/testing_config.py",
+		"app_server/configuration/test_config.py",
 		"app_server/*/__init__.py"
 	]
 )

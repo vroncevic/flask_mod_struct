@@ -34,3 +34,4 @@ class DropDatabase(Command):
 		print("Drop database/tables")
 		self.__db.drop_all()
 		print("Done")
+		return 0

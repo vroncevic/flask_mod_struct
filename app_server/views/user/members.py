@@ -17,7 +17,7 @@ from app_server.models.model_user import User
 class Members(View):
 	"""
 	Define class Members with attribute(s) and method(s).
-	View for member list (list of standard users).
+	Define view for member list (list of standard users).
 	It defines:
 		attribute:
 			decorators - List of decorators
@@ -32,5 +32,5 @@ class Members(View):
 		:return: Value of the view or error handler
 		:rtype: View
 		"""
-		table_data = User.query.filter(User.id != 1)
-		return render_template("user/members.html", table=table_data)
+		data_view = User.query.filter(User.id != 1)
+		return render_template("user/members.html", data=data_view)

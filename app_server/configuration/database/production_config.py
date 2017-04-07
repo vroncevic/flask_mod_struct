@@ -13,7 +13,7 @@ from app_server.configuration.database import BaseConfig
 class ProductionConfig(BaseConfig):
 	"""
 	Define class ProductionConfig with attribute(s) and method(s).
-	Production configuration class.
+	Production database configuration.
 	It defines:
 		attribute:
 			DB_USER - Database connection username

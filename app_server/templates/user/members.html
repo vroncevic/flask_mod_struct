@@ -6,11 +6,11 @@
 			<th>Username</th>
 			<th>Email</th>
 		</tr>
-		{% for data in table %}
+		{% for item in data %}
 			<tr>
-				<td> {{ data.fullname }} </td>
-				<td> {{ data.username }} </td>
-				<td> {{ data.email }} </td>
+				<td> {{ item.fullname }} </td>
+				<td> {{ item.username }} </td>
+				<td> {{ item.email }} </td>
 			</tr>
 		{% endfor %}
 	</table>

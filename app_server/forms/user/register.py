@@ -15,7 +15,7 @@ from wtforms.validators import DataRequired, Email, Length, EqualTo
 class UserRegisterForm(FlaskForm):
 	"""
 	Define class UserRegisterForm with attribute(s) and method(s).
-	User registration form (creating new user - public operation).
+	Define user registration form (creating new user - public operation).
 	It defines:
 		attribute:
 			fullname - User fullname
@@ -27,22 +27,15 @@ class UserRegisterForm(FlaskForm):
 			None
 	"""
 
-	fullname = StringField(
-		"Fullname", validators=[Length(min=4, max=72)]
-	)
-	username = StringField(
-		"Username", validators=[Length(min=4, max=32)]
-	)
+	fullname = StringField("Fullname", validators=[Length(min=4, max=72)])
+	username = StringField("Username", validators=[Length(min=4, max=32)])
 	email = StringField(
 		"Email Address",
-		validators=[DataRequired(), Email(message=None), Length(min=6, max=80)]
+		validators=[DataRequired(), Email(), Length(min=6, max=80)]
 	)
 	password = PasswordField(
 		"Password", validators=[DataRequired(), Length(min=6, max=32)]
 	)
 	confirm = PasswordField(
-		"Confirm password",
-		validators=[
-			DataRequired(), EqualTo("password", message="Passwords must match.")
-		]
+		"Confirm password", validators=[DataRequired(), EqualTo("password")]
 	)

@@ -32,3 +32,4 @@ class ORMTest(Command):
 		print("Run ORM tests")
 		self.__query.query_all()
 		print("Done")
+		return 0
