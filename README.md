@@ -1,4 +1,4 @@
-Flask Monolith Project (Python 2.7/3.4)
+Flask Monolith Project
 ================================================================================
 
 The README is used to introduce the modules and provide instructions on
@@ -42,5 +42,5 @@ it under the same terms as Python itself, either Python version 2.7.9/3.4.2 or,
 at your option, any later version of Python 3 you may have available.
 
 ![alt tag](https://raw.githubusercontent.com/vroncevic/flask_module_structure/master/python_logo.png)
-![alt tag](https://raw.githubusercontent.com/vroncevic/flask_module_structure/master/linux_logo.jpg)
+![alt tag](https://raw.githubusercontent.com/vroncevic/flask_module_structure/master/linux_logo.png)
 
