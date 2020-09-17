@@ -3,15 +3,15 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="shortcut icon"
-		      href="{{ url_for('.static', filename='favicon.ico') }}">
+			  href="{{ url_for('.static', filename='favicon.ico') }}">
 		<title>Flask{% block title %}{% endblock %}</title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-		      rel="stylesheet" media="screen">
+			  rel="stylesheet" media="screen">
 		<link href="{{ url_for('.static', filename='base.css') }}"
-		      rel="stylesheet" media="screen">
+			  rel="stylesheet" media="screen">
 		{% block css %}{% endblock %}
 	</head>
 	<body>
@@ -46,9 +46,9 @@
 		<br><br>
 		{% include "footer.html" %}
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
-		        type="text/javascript"></script>
+				type="text/javascript"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-		        type="text/javascript"></script>
+				type="text/javascript"></script>
 		{% block js %}{% endblock %}
 	</body>
 </html>
