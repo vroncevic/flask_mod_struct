@@ -8,7 +8,7 @@ The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.
 
-![Python package](https://github.com/vroncevic/flask_mod_struct/workflows/Python%20package/badge.svg?branch=master)
+![Python package](https://github.com/vroncevic/flask_mod_struct/workflows/Python%20package%20flask_mod_struct/badge.svg?branch=master)
  [![GitHub issues open](https://img.shields.io/github/issues/vroncevic/flask_mod_struct.svg)](https://github.com/vroncevic/flask_mod_struct/issues)
  [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/flask_mod_struct.svg)](https://github.com/vroncevic/flask_mod_struct/graphs/contributors)
 
