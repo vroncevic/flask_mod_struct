@@ -5,11 +5,11 @@
      __init__.py
  Copyright
      Copyright (C) 2017 Vladimir Roncevic <elektron.ronca@gmail.com>
-     flask_module_structure is free software: you can redistribute it and/or
+     flask_mod_struct is free software: you can redistribute it and/or
      modify it under the terms of the GNU General Public License as published
      by the Free Software Foundation, either version 3 of the License, or
      (at your option) any later version.
-     flask_module_structure is distributed in the hope that it will be useful,
+     flask_mod_struct is distributed in the hope that it will be useful,
      but WITHOUT ANY WARRANTY; without even the implied warranty of
      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
      See the GNU General Public License for more details.
@@ -91,8 +91,8 @@ def load_user(user_id):
     """
         Loading user in context of login manager.
 
-        :return: SQLAlchemy integration object
-        :rtype: <SQLAlchemy>
+        :return: Loaded user
+        :rtype: <User>
         :exceptions: None
     """
     return User.query.filter(User.id == int(user_id)).first()
@@ -100,10 +100,10 @@ def load_user(user_id):
 @app.errorhandler(401)
 def forbidden_page(error):
     """
-        Getter for db object.
+        Unauthorized client error status response.
 
-        :return: SQLAlchemy integration object
-        :rtype: <SQLAlchemy>
+        :return: Unauthorized client page, response code
+        :rtype: <str>, <int>
         :exceptions: None
     """
     return render_template("errors/401.html"), 401
@@ -111,10 +111,10 @@ def forbidden_page(error):
 @app.errorhandler(403)
 def forbidden_page(error):
     """
-        Getter for db object.
+        Forbidden client error status response.
 
-        :return: SQLAlchemy integration object
-        :rtype: <SQLAlchemy>
+        :return: Forbidden client page, response code
+        :rtype: <str>, <int>
         :exceptions: None
     """
     return render_template("errors/403.html"), 403
@@ -122,10 +122,10 @@ def forbidden_page(error):
 @app.errorhandler(404)
 def page_not_found(error):
     """
-        Getter for db object.
+        Server Not Found.
 
-        :return: SQLAlchemy integration object
-        :rtype: <SQLAlchemy>
+        :return: Server not found page, response code
+        :rtype: <str>, <int>
         :exceptions: None
     """
     return render_template("errors/404.html"), 404
@@ -135,8 +135,8 @@ def server_error_page(error):
     """
         Defining internal server error response.
 
-        :return: SQLAlchemy integration object
-        :rtype: <SQLAlchemy>
+        :return: Internal server error page, response code
+        :rtype: <str>, <int>
         :exceptions: None
     """
     return render_template("errors/500.html"), 500
