@@ -17,16 +17,8 @@
      along with this program. If not, see <http://www.gnu.org/licenses/>.
  Info
      Define class TestUserBlueprint with attribute(s) and method(s).
+     Define TestUserBlueprint for testing App.
 """
-
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.0.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
 
 import sys
 import unittest
@@ -38,9 +30,18 @@ try:
     from app_server.forms.user.login import UserLoginForm
     from app_server.models.model_user import User
     from app_server.tests import BaseTestCase
-except ImportError as error:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error)
+except ImportError as error_message:
+    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
+
+__author__ = "Vladimir Roncevic"
+__copyright__ = "Copyright 2017, Free software to use and distributed it."
+__credits__ = ["Vladimir Roncevic"]
+__license__ = "GNU General Public License (GPL)"
+__version__ = "1.1.0"
+__maintainer__ = "Vladimir Roncevic"
+__email__ = "elektron.ronca@gmail.com"
+__status__ = "Updated"
 
 
 class TestUserBlueprint(BaseTestCase):
