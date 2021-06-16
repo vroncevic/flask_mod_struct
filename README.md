@@ -1,3 +1,5 @@
+<img align="right" src="https://raw.githubusercontent.com/vroncevic/flask_mod_struct/dev/docs/flask_mod_struct_logo.png" width="25%">
+
 # Flask Module Structured Framework
 
 **flask_mod_struct** is framework for managing Flask App.

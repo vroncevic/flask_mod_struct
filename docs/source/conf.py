@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 project = u'flask_mod_struct'
-copyright = u'2020, Vladimir Roncevic <elektron.ronca@gmail.com>'
+copyright = u'2017, Vladimir Roncevic <elektron.ronca@gmail.com>'
 author = u'Vladimir Roncevic <elektron.ronca@gmail.com>'
 version = u'1.1.0'
 release = u'https://github.com/vroncevic/flask_mod_struct/releases'
