@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      __init__.py
  Copyright
@@ -17,7 +17,7 @@
      with this program. If not, see <http://www.gnu.org/licenses/>.
  Info
      Defined url rule views.
-"""
+'''
 
 import sys
 
@@ -30,27 +30,27 @@ try:
     from app_server.views.user.administration import Administration
     from app_server.views.user.edit import Edit
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 user = Module(__name__)
 
-user.add_url_rule("/login/", view_func=Login.as_view("login"))
+user.add_url_rule('/login/', view_func=Login.as_view('login'))
 user.add_url_rule(
-    "/register/", view_func=Register.as_view("register")
+    '/register/', view_func=Register.as_view('register')
 )
-user.add_url_rule("/logout/", view_func=Logout.as_view("logout"))
-user.add_url_rule("/members/", view_func=Members.as_view("members"))
+user.add_url_rule('/logout/', view_func=Logout.as_view('logout'))
+user.add_url_rule('/members/', view_func=Members.as_view('members'))
 user.add_url_rule(
-    "/administration/", view_func=Administration.as_view("administration")
+    '/administration/', view_func=Administration.as_view('administration')
 )
-user.add_url_rule("/edit/<username>", view_func=Edit.as_view("edit"))
+user.add_url_rule('/edit/<username>', view_func=Edit.as_view('edit'))

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      members.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class Members with attribute(s) and method(s).
      Define view for member list (list of standard users).
-"""
+'''
 
 import sys
 
@@ -28,21 +28,21 @@ try:
     from flask_login import login_required
     from app_server.models.model_user import User
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class Members(View):
-    """
+    '''
         Define class Members with attribute(s) and method(s).
         Define view for member list (list of standard users).
         It defines:
@@ -51,17 +51,17 @@ class Members(View):
                 | decorators - List of decorators
             :methods:
                 | dispatch_request - View for list of users (without admin)
-    """
+    '''
 
     decorators = [login_required]
 
     def dispatch_request(self):
-        """
+        '''
             View for list of users (without admin)
 
             :return: Value of the view or error handler
             :rtype: <View>
             :exceptions: None
-        """
+        '''
         data_view = User.query.filter(User.id != 1)
-        return render_template("user/members.html", data=data_view)
+        return render_template('user/members.html', data=data_view)

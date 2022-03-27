@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      test_config.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class TestDevelopmentConfig, TestTestingConfig,
      TestProductionConfig with attribute(s) and method(s).
-"""
+'''
 
 import sys
 import unittest
@@ -28,21 +28,21 @@ try:
     from flask_testing import TestCase
     from app_server import app
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class TestDevelopmentConfig(TestCase):
-    """
+    '''
         Define class TestDevelopmentConfig with attribute(s) and method(s).
         Define TestDevelopmentConfig for testing app.
         It defines:
@@ -52,31 +52,32 @@ class TestDevelopmentConfig(TestCase):
             :methods:
                 | create_app - Create app based on config
                 | test_app_is_development - Checking development config
-    """
+    '''
 
     def create_app(self):
-        """
+        '''
             Create app based on config
 
             :exceptions: None
-        """
-        app.config.from_object("app_server.configuration.DevelopmentConfig")
+        '''
+        app.config.from_object('app_server.configuration.DevelopmentConfig')
         return app
 
     def test_app_is_development(self):
-        """
+        '''
             Checking development config
 
             :exceptions: None
-        """
-        self.assertFalse(current_app.config["TESTING"])
-        self.assertTrue(app.config["DEBUG"] is True)
-        self.assertTrue(app.config["WTF_CSRF_ENABLED"] is False)
-        self.assertTrue(app.config["DEBUG_TB_ENABLED"] is True)
+        '''
+        self.assertFalse(current_app.config['TESTING'])
+        self.assertTrue(app.config['DEBUG'] is True)
+        self.assertTrue(app.config['WTF_CSRF_ENABLED'] is False)
+        self.assertTrue(app.config['DEBUG_TB_ENABLED'] is True)
         self.assertFalse(current_app is None)
 
+
 class TestTestingConfig(TestCase):
-    """
+    '''
         Define class TestTestingConfig with attribute(s) and method(s).
         Define TestTestingConfig for testing app.
         It defines:
@@ -86,30 +87,31 @@ class TestTestingConfig(TestCase):
             :methods:
                 | create_app - Create app based on config
                 | test_app_is_testing - Checking test config
-    """
+    '''
 
     def create_app(self):
-        """
+        '''
             Create app based on config
 
             :exceptions: None
-        """
-        app.config.from_object("app_server.configuration.TestingConfig")
+        '''
+        app.config.from_object('app_server.configuration.TestingConfig')
         return app
 
     def test_app_is_testing(self):
-        """
+        '''
             Checking test config
 
             :exceptions: None
-        """
-        self.assertTrue(current_app.config["TESTING"])
-        self.assertTrue(app.config["DEBUG"] is True)
-        self.assertTrue(app.config["BCRYPT_LOG_ROUNDS"] == 4)
-        self.assertTrue(app.config["WTF_CSRF_ENABLED"] is False)
+        '''
+        self.assertTrue(current_app.config['TESTING'])
+        self.assertTrue(app.config['DEBUG'] is True)
+        self.assertTrue(app.config['BCRYPT_LOG_ROUNDS'] == 4)
+        self.assertTrue(app.config['WTF_CSRF_ENABLED'] is False)
+
 
 class TestProductionConfig(TestCase):
-    """
+    '''
         Define class TestProductionConfig with attribute(s) and method(s).
         Define TestProductionConfig for testing app.
         It defines:
@@ -119,28 +121,29 @@ class TestProductionConfig(TestCase):
             :methods:
                 | create_app - Create app based on config
                 | test_app_is_production - Checking production config
-    """
+    '''
 
     def create_app(self):
-        """
+        '''
             Create app based on config
 
             :exceptions: None
-        """
-        app.config.from_object("app_server.configuration.ProductionConfig")
+        '''
+        app.config.from_object('app_server.configuration.ProductionConfig')
         return app
 
     def test_app_is_production(self):
-        """
+        '''
             Checking production config
 
             :exceptions: None
-        """
-        self.assertFalse(current_app.config["TESTING"])
-        self.assertTrue(app.config["DEBUG"] is False)
-        self.assertTrue(app.config["DEBUG_TB_ENABLED"] is False)
-        self.assertTrue(app.config["WTF_CSRF_ENABLED"] is True)
-        self.assertTrue(app.config["BCRYPT_LOG_ROUNDS"] == 13)
+        '''
+        self.assertFalse(current_app.config['TESTING'])
+        self.assertTrue(app.config['DEBUG'] is False)
+        self.assertTrue(app.config['DEBUG_TB_ENABLED'] is False)
+        self.assertTrue(app.config['WTF_CSRF_ENABLED'] is True)
+        self.assertTrue(app.config['BCRYPT_LOG_ROUNDS'] == 13)
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     unittest.main()

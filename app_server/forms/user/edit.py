@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      edit.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class UserEditForm with attribute(s) and method(s).
      Form for edit user data.
-"""
+'''
 
 import sys
 
@@ -27,21 +27,21 @@ try:
     from wtforms import StringField, PasswordField, BooleanField
     from wtforms.validators import DataRequired, Email, Length, EqualTo
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class UserEditForm(FlaskForm):
-    """
+    '''
         Define class UserEditForm with attribute(s) and method(s).
         Define edit user form (administrator).
         It defines:
@@ -55,16 +55,16 @@ class UserEditForm(FlaskForm):
                 | admin - User admin (True/False)
             :methods:
                 | None
-    """
+    '''
 
-    fullname = StringField("Fullname", validators=[Length(min=4, max=72)])
-    username = StringField("Username", validators=[Length(min=4, max=32)])
+    fullname = StringField('Fullname', validators=[Length(min=4, max=72)])
+    username = StringField('Username', validators=[Length(min=4, max=32)])
     email = StringField(
-        "Email Address",
+        'Email Address',
         validators=[DataRequired(), Email(), Length(min=6, max=80)]
     )
-    password = PasswordField("Password")
+    password = PasswordField('Password')
     confirm = PasswordField(
-        "Confirm password", validators=[EqualTo("password")]
+        'Confirm password', validators=[EqualTo('password')]
     )
-    admin = BooleanField("Admin", default=False)
+    admin = BooleanField('Admin', default=False)

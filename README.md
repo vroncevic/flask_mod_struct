@@ -4,7 +4,7 @@
 
 **flask_mod_struct** is framework for managing Flask App.
 
-Developed in **[python](https://www.python.org/)** code: **100%**.
+Developed in **[python](https://www.python.org/)** code.
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
@@ -14,12 +14,14 @@ other information that should be provided before the modules are installed.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 **Table of Contents**
 
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Package structure](#package-structure)
 - [Docs](#docs)
+- [Contributing](#contributing)
 - [Copyright and licence](#copyright-and-licence)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -28,9 +30,9 @@ other information that should be provided before the modules are installed.
 
 Navigate to **[release page](https://github.com/vroncevic/flask_mod_struct/releases)** download and extract release archive.
 
-To install modules type the following:
+To install modules type the following
 
-```
+```bash
 tar xvzf flask_mod_struct-x.y.z.tar.gz
 cd flask_mod_struct-x.y.z/
 pip install -r requirements.txt
@@ -45,9 +47,9 @@ Or You can use docker to create image/container.
 
 ### Dependencies
 
-**flask_mod_struct** requires other modules and libraries (Python 2.x/3.x):
+**flask_mod_struct** requires other modules and libraries (Python 2.x/3.x)
 
-```
+```bash
 * Flask
 * Flask-Migrate
 * Flask-Script
@@ -64,9 +66,9 @@ Or You can use docker to create image/container.
 
 ### Package structure
 
-Expected framework structure:
+Expected framework structure
 
-```
+```bash
 .
 ├── app_server/
 │   ├── configuration/
@@ -153,15 +155,18 @@ Expected framework structure:
 │   ├── run_coverage.py
 │   └── run_test.py
 └── manage.py
-
 ```
 
 ### Docs
 
 [![Documentation Status](https://readthedocs.org/projects/flask_mod_struct/badge/?version=latest)](https://flask_mod_struct.readthedocs.io/projects/flask_mod_struct/en/latest/?badge=latest)
 
-* [flask_mod_struct.readthedocs.io](https://flask_mod_struct.readthedocs.io/en/latest/)
-* [www.python.org](https://www.python.org/)
+- [flask_mod_struct.readthedocs.io](https://flask_mod_struct.readthedocs.io/en/latest/)
+- [www.python.org](https://www.python.org/)
+
+### Contributing
+
+[Contributing to config_flask](CONTRIBUTING.md)
 
 ### Copyright and licence
 

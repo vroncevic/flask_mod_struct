@@ -1,3 +1,3 @@
-"""
+'''
     Defining views
-"""
+'''

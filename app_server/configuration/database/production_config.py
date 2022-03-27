@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      production_config.py
  Copyright
@@ -18,28 +18,28 @@
  Info
      Define class ProductionConfig with attribute(s) and method(s).
      Production database configuration.
-"""
+'''
 
 import sys
 
 try:
     from app_server.configuration.database import BaseConfig
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class ProductionConfig(BaseConfig):
-    """
+    '''
         Define class ProductionConfig with attribute(s) and method(s).
         Production database configuration.
         It defines:
@@ -53,14 +53,14 @@ class ProductionConfig(BaseConfig):
                 | SQLALCHEMY_DATABASE_URI - Set DB URI
             :methods:
                 | None
-    """
+    '''
 
-    DB_USER = "mydbuser"
-    DB_PASSWORD = "mydbpassword"
-    DB_HOST = "127.0.0.1"
+    DB_USER = 'mydbuser'
+    DB_PASSWORD = 'mydbpassword'
+    DB_HOST = '127.0.0.1'
     DB_PORT = 5432
-    DB_NAME = "manage_users"
-    DB_DIALECT = "postgresql"
-    SQLALCHEMY_DATABASE_URI = "{0}://{1}:{2}@{3}:{4}/{5}".format(
+    DB_NAME = 'manage_users'
+    DB_DIALECT = 'postgresql'
+    SQLALCHEMY_DATABASE_URI = '{0}://{1}:{2}@{3}:{4}/{5}'.format(
         DB_DIALECT, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME
     )

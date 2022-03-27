@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      logout.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class Logout with attribute(s) and method(s).
      Define logout view.
-"""
+'''
 
 import sys
 
@@ -27,21 +27,21 @@ try:
     from flask import redirect, session, flash, url_for
     from flask_login import logout_user, login_required
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class Logout(View):
-    """
+    '''
         Define class Logout with attribute(s) and method(s).
         Define logout view.
         It defines:
@@ -50,19 +50,19 @@ class Logout(View):
                 | decorators - List of decorators
             :methods:
                 | dispatch_request - Method view for logout operation
-    """
+    '''
 
     decorators = [login_required]
 
     def dispatch_request(self):
-        """
+        '''
             Method view for logout operation
 
             :return: Value of the view or error handler
             :rtype: <View>
             :exceptions: None
-        """
+        '''
         logout_user()
-        session["logged_in"] = False
-        flash("You were logged out. Bye!", "success")
-        return redirect(url_for("base.home"))
+        session['logged_in'] = False
+        flash('You were logged out. Bye!', 'success')
+        return redirect(url_for('base.home'))

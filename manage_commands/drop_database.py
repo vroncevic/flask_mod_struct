@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      drop_database.py
  Copyright
@@ -18,28 +18,28 @@
  Info
      Define class DropDatabase with attribute(s) and method(s).
      Drop database with tables.
-"""
+'''
 
 import sys
 
 try:
     from flask_script import Command
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class DropDatabase(Command):
-    """
+    '''
         Define class DropDatabase with attribute(s) and method(s).
         Drop database with tables.
         It defines:
@@ -49,28 +49,28 @@ class DropDatabase(Command):
             :methods:
                 | __init__ - Initial constructor
                 | run - Drop database with tables
-    """
+    '''
 
     def __init__(self, db):
-        """
+        '''
             Initial constructor.
 
             :param db: SQLAlchemy integration object
             :type db: <SQLAlchemy>
             :exceptions: None
-        """
+        '''
         super(DropDatabase, self).__init__()
         self.__db = db
 
     def run(self):
-        """
+        '''
             Drop database with tables.
 
             :return: 0
             :rtype: <int>
             :exceptions: None
-        """
-        print("Dropping database/tables")
+        '''
+        print('Dropping database/tables')
         self.__db.drop_all()
-        print("Done")
+        print('Done')
         return 0

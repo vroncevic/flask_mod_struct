@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      run_coverage.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class RunCoverage with attribute(s) and method(s).
      Create coverage reports.
-"""
+'''
 
 import sys
 from os.path import dirname, abspath, join
@@ -27,21 +27,21 @@ try:
     import unittest
     from flask_script import Command
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class RunCoverage(Command):
-    """
+    '''
         Define class RunCoverage with attribute(s) and method(s).
         Create coverage reports.
         It defines:
@@ -51,38 +51,38 @@ class RunCoverage(Command):
             :methods:
                 | __init__ - Initial constructor
                 | run - Create coverage reports
-    """
+    '''
 
     def __init__(self, cov):
-        """
+        '''
             Initial constructor.
 
             :param cov: Coverage integration object
             :type: Coverage
             :exceptions: None
-        """
+        '''
         super(RunCoverage, self).__init__()
         self.cov = cov
 
     def run(self):
-        """
+        '''
             Create coverage reports.
 
             :return: 0 - success else 1
             :rtype: <int>
             :exceptions: None
-        """
-        tests = unittest.TestLoader().discover("app_server/tests")
+        '''
+        tests = unittest.TestLoader().discover('app_server/tests')
         result = unittest.TextTestRunner(verbosity=2).run(tests)
         if result.wasSuccessful():
             self.cov.stop()
             self.cov.save()
-            print("Coverage Summary:")
+            print('Coverage Summary:')
             self.cov.report()
             basedir = abspath(dirname(__file__))
-            coverage_dir = join(basedir, "tmp/coverage")
+            coverage_dir = join(basedir, 'tmp/coverage')
             self.cov.html_report(directory=coverage_dir)
-            print("HTML version: file://{0}/index.html".format(coverage_dir))
+            print('HTML version: file://{0}/index.html'.format(coverage_dir))
             self.cov.erase()
             return 0
         return 1

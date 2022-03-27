@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      manage.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define manage routines for Flask App.
      Main entry point of Flask App.
-"""
+'''
 
 import sys
 
@@ -36,11 +36,11 @@ try:
 
     COV = coverage.coverage(
         branch=True,
-        include="app_server/*",
+        include='app_server/*',
         omit=[
-            "app_server/tests/*",
-            "app_server/configuration/test_config.py",
-            "app_server/*/__init__.py"
+            'app_server/tests/*',
+            'app_server/configuration/test_config.py',
+            'app_server/*/__init__.py'
         ]
     )
 
@@ -48,28 +48,28 @@ try:
 
     from app_server import app, db
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 migrate = Migrate(app, db)
 manager = Manager(app)
-manager.add_command("db", MigrateCommand)
-manager.add_command("create_db", CreateDatabase(db))
-manager.add_command("drop_db", DropDatabase(db))
-manager.add_command("create_data", CreateData(db))
-manager.add_command("createsuperuser", CreateSuperUser(db))
-manager.add_command("test", RunTest())
-manager.add_command("coverage", RunCoverage(COV))
-manager.add_command("test_query", ORMTest())
+manager.add_command('db', MigrateCommand)
+manager.add_command('create_db', CreateDatabase(db))
+manager.add_command('drop_db', DropDatabase(db))
+manager.add_command('create_data', CreateData(db))
+manager.add_command('createsuperuser', CreateSuperUser(db))
+manager.add_command('test', RunTest())
+manager.add_command('coverage', RunCoverage(COV))
+manager.add_command('test_query', ORMTest())
 
 # python manage.py create_db
 # python manage.py db init
@@ -79,5 +79,5 @@ manager.add_command("test_query", ORMTest())
 # python manage.py test_query
 # python manage.py runserver
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     manager.run()

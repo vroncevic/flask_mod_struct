@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      login.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class Login with attribute(s) and method(s).
      Create view for login process.
-"""
+'''
 
 import sys
 
@@ -32,21 +32,21 @@ try:
     from app_server.forms.user.login import UserLoginForm
     from app_server.models.model_user import User
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class Login(View):
-    """
+    '''
         Define class Login with attribute(s) and method(s).
         Define view for login process.
         It defines:
@@ -55,34 +55,34 @@ class Login(View):
                 | methods - Handler methods
             :methods:
                 | dispatch_request - Method view for login process
-    """
+    '''
 
-    methods = ["GET", "POST"]
+    methods = ['GET', 'POST']
 
     def dispatch_request(self):
-        """
+        '''
             Method view for login process
 
             :return: Value of the view or error handler
             :rtype: <View>
             :exceptions: None
-        """
+        '''
         form = UserLoginForm(request.form)
         if form.validate_on_submit():
             user = User.query.filter_by(email=form.email.data).first()
             password_ok = bcrypt.check_password_hash(
-                user.password, request.form.get("password")
+                user.password, request.form.get('password')
             )
             if user and password_ok:
                 login_user(user)
-                flash("You are logged in. Welcome!", "success")
-                session["logged_in"] = True
+                flash('You are logged in. Welcome!', 'success')
+                session['logged_in'] = True
                 if user.admin:
-                    return redirect(url_for("user.administration"))
-                return redirect(url_for("user.members"))
+                    return redirect(url_for('user.administration'))
+                return redirect(url_for('user.members'))
             else:
-                flash("Invalid email and/or password.", "danger")
-                return render_template("user/login.html", form=form)
+                flash('Invalid email and/or password.', 'danger')
+                return render_template('user/login.html', form=form)
         return render_template(
-            "user/login.html", title="Please Login", form=form
+            'user/login.html', title='Please Login', form=form
         )

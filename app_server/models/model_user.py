@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      model_user.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class User with attribute(s) and method(s).
      Model for user data.
-"""
+'''
 
 import datetime
 import sys
@@ -27,21 +27,21 @@ try:
     from app_server import app, db, bcrypt
     from app_server.models import Base
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class User(Base):
-    """
+    '''
         Define class User with attribute(s) and method(s).
         Define model user for authentication and authorization.
         It defines:
@@ -60,9 +60,9 @@ class User(Base):
                 | is_active - Getting status
                 | is_anonymous - Getting info
                 | __repr__ - Printable representation of the User
-    """
+    '''
 
-    __tablename__ = "users"
+    __tablename__ = 'users'
 
     fullname = db.Column(db.String(255), unique=True, nullable=False)
     username = db.Column(db.String(255), unique=True, nullable=False)
@@ -71,7 +71,7 @@ class User(Base):
     admin = db.Column(db.Boolean, nullable=False, default=False)
 
     def __init__(self, username, password, admin=False):
-        """
+        '''
             Initial constructor
 
             :param username: User authentication name
@@ -81,60 +81,60 @@ class User(Base):
             :param admin: Marking user as Administrator
             :type: <bool>
             :exceptions: None
-        """
+        '''
         self.username = username
         self.password = bcrypt.generate_password_hash(
-            password, app.config.get("BCRYPT_LOG_ROUNDS")
+            password, app.config.get('BCRYPT_LOG_ROUNDS')
         )
         self.modified = self.created = datetime.datetime.now()
         self.admin = admin
 
     def get_id(self):
-        """
+        '''
             Getting ID
 
             :return: Getting id
             :type: <int>
             :exceptions: None
-        """
+        '''
         return self.id
 
     def is_authenticated(self):
-        """
+        '''
             Authentication status
 
             :return: Authentication status
             :type: <bool>
             :exceptions: None
-        """
+        '''
         return True
 
     def is_active(self):
-        """
+        '''
             Get status
 
             :return: Getting status
             :type: <bool>
             :exceptions: None
-        """
+        '''
         return True
 
     def is_anonymous(self):
-        """
+        '''
             Getting info
 
             :return: Getting info
             :type: <bool>
             :exceptions: None
-        """
+        '''
         return False
 
     def __repr__(self):
-        """
+        '''
             Printable representation of the User
 
             :return: Printable representation of the User
             :type: <str>
             :exceptions: None
-        """
-        return "<{0} {1}>".format(self.__class__.__name__, self.username)
+        '''
+        return '<{0} {1}>'.format(self.__class__.__name__, self.username)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      login.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class UserLoginForm with attribute(s) and method(s).
      Form for login user data.
-"""
+'''
 
 import sys
 
@@ -27,21 +27,21 @@ try:
     from wtforms import StringField, PasswordField
     from wtforms.validators import DataRequired, Email
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class UserLoginForm(FlaskForm):
-    """
+    '''
         Define class UserLoginForm with attribute(s) and method(s).
         Define user login form (by email and password).
         It defines:
@@ -51,7 +51,7 @@ class UserLoginForm(FlaskForm):
                 | password - User password
             :methods:
                 | None
-    """
+    '''
 
-    email = StringField("Email Address", [DataRequired(), Email()])
-    password = PasswordField("Password", [DataRequired()])
+    email = StringField('Email Address', [DataRequired(), Email()])
+    password = PasswordField('Password', [DataRequired()])

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      create_database.py
  Copyright
@@ -18,28 +18,28 @@
  Info
      Define class CreateDatabase with attribute(s) and method(s).
      Create database by defined models.
-"""
+'''
 
 import sys
 
 try:
     from flask_script import Command
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class CreateDatabase(Command):
-    """
+    '''
         Define class CreateDatabase with attribute(s) and method(s).
         Create database by defined models.
         It defines:
@@ -49,28 +49,28 @@ class CreateDatabase(Command):
             :methods:
                 | __init__ - Initial constructor
                 | run - Create database with tables.
-    """
+    '''
 
     def __init__(self, db):
-        """
+        '''
             Initial constructor.
 
             :param db: SQLAlchemy integration object
             :type db: <SQLAlchemy>
             :exceptions: None
-        """
+        '''
         super(CreateDatabase, self).__init__()
         self.__db = db
 
     def run(self):
-        """
+        '''
             Create database with tables.
 
             :return: 0
             :rtype: <int>
             :exceptions: None
-        """
-        print("Create database/tables")
+        '''
+        print('Create database/tables')
         self.__db.create_all()
-        print("Done")
+        print('Done')
         return 0
