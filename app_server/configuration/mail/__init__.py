@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      __init__.py
  Copyright
@@ -17,20 +17,20 @@
      along with this program. If not, see <http://www.gnu.org/licenses/>.
  Info
      Define class BaseConfig with attribute(s) and method(s).
-"""
+'''
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class BaseConfig(object):
-    """
+    '''
         Define class BaseConfig with attribute(s) and method(s).
         Base initial configuration for mail service.
         It defines:
@@ -41,8 +41,8 @@ class BaseConfig(object):
                 | MAIL_USE_SSL - Use SSL (True/False)
             :methods:
                 | None
-    """
+    '''
 
-    MAIL_SERVER = "smtp.gmail.com"
+    MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465
     MAIL_USE_SSL = True

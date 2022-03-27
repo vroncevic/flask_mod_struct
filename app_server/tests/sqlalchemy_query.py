@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      sqlalchemy_query.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class SQLAlchemyQuery with attribute(s) and method(s).
      Create session and do query.
-"""
+'''
 
 import sys
 
@@ -26,21 +26,21 @@ try:
     from app_server.tests.base_query import SQLAlchemyBaseQuery
     from app_server.models.model_user import User
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class SQLAlchemyQuery(object):
-    """
+    '''
         Define class SQLAlchemyQuery with attribute(s) and method(s).
         Create session and do query.
         It defines:
@@ -50,21 +50,21 @@ class SQLAlchemyQuery(object):
             :methods:
                 | __init__ - Initial constructor
                 | query_all - Query all
-    """
+    '''
 
     def __init__(self):
-        """
+        '''
             Initial constructor
 
             :exceptions: None
-        """
+        '''
         self.__session = SQLAlchemyBaseQuery.Session()
 
     def query_all(self):
-        """
+        '''
             Query all
 
             :exceptions: None
-        """
+        '''
         for user in self.__session.query(User).all():
             print(user.fullname, user.username, user.email, user.admin)

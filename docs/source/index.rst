@@ -3,7 +3,7 @@ Flask Module Structured Framework
 
 **flask_mod_struct** is framework for Flask web apps.
 
-Developed in `python <https://www.python.org/>`_ code: **100%**.
+Developed in `python <https://www.python.org/>`_ code.
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
@@ -25,7 +25,7 @@ other information that should be provided before the modules are installed.
 
 .. toctree::
    :maxdepth: 4
-   :caption: Contents:
+   :caption: Contents
 
    self
 
@@ -36,7 +36,7 @@ Navigate to release `page`_ download and extract release archive.
 
 .. _page: https://github.com/vroncevic/flask_mod_struct/releases
 
-To install this set of modules type the following:
+To install this set of modules type the following
 
 .. code-block:: bash
 
@@ -57,7 +57,7 @@ You can use Docker to create image/container.
 Dependencies
 -------------
 
-**flask_mod_struct** requires next modules and libraries:
+**flask_mod_struct** requires next modules and libraries
 
 * Flask
 * Flask-Migrate
@@ -75,9 +75,9 @@ Dependencies
 Library structure
 ------------------
 
-**flask_mod_struct** is based on OOP:
+**flask_mod_struct** is based on OOP
 
-Framework structure:
+Framework structure
 
 .. code-block:: bash
 

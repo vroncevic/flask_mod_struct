@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      orm_test.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class ORMTest with attribute(s) and method(s).
      Create initial data and insert to database.
-"""
+'''
 
 import sys
 
@@ -26,21 +26,21 @@ try:
     from flask_script import Command
     from app_server.tests.sqlalchemy_query import SQLAlchemyQuery
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class ORMTest(Command):
-    """
+    '''
         Define class ORMTest with attribute(s) and method(s).
         Command for ORM tests.
         It defines:
@@ -50,26 +50,26 @@ class ORMTest(Command):
             :methods:
                 | __init__ - Initial constructor
                 | run - Run queries.
-    """
+    '''
 
     def __init__(self):
-        """
+        '''
             Initial constructor
 
             :exceptions: None
-        """
+        '''
         super(ORMTest, self).__init__()
         self.__query = SQLAlchemyQuery()
 
     def run(self):
-        """
+        '''
             Run testes
 
             :return: 0 for success else 1
             :rtype: <int>
             :exceptions: None
-        """
-        print("Run ORM tests")
+        '''
+        print('Run ORM tests')
         self.__query.query_all()
-        print("Done")
+        print('Done')
         return 0

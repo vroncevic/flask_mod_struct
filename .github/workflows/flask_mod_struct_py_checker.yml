@@ -2,8 +2,16 @@ name: flask_mod_struct py checker
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'app_server/**'
+      - 'manage_commands/**'
+      - 'manage.py'
   pull_request:
     branches: [ master ]
+    paths:
+      - 'app_server/**'
+      - 'manage_commands/**'
+      - 'manage.py'
 jobs:
   build:
     runs-on: ubuntu-latest

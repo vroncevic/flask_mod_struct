@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      create_superuser.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class CreateSuperUser with attribute(s) and method(s).
      Create superuser and insert to database.
-"""
+'''
 
 import sys
 
@@ -27,21 +27,21 @@ try:
     from flask_script import Command
     from app_server.models.model_user import User
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class CreateSuperUser(Command):
-    """
+    '''
         Define class CreateSuperUser with attribute(s) and method(s).
         Create superuser and insert to database.
         It defines:
@@ -51,41 +51,41 @@ class CreateSuperUser(Command):
             :methods:
                 | __init__ - Initial constructor
                 | run - Create superuser and insert to database
-    """
+    '''
 
     def __init__(self, db):
-        """
+        '''
             Initial constructor.
 
             :param db: SQLAlchemy integration object
             :type: <SQLAlchemy>
             :exceptions: None
-        """
+        '''
         super(CreateSuperUser, self).__init__()
         self.__db = db
 
     def run(self):
-        """
+        '''
             Create superuser and insert to database.
 
             :return: 0
             :rtype: <int>
             :exceptions: None
-        """
-        print("Creating superuser account")
+        '''
+        print('Creating superuser account')
         try:
-            username = raw_input("Insert username of superuser: ")
-            superuser_email = raw_input("Insert email of superuser: ")
+            username = raw_input('Insert username of superuser: ')
+            superuser_email = raw_input('Insert email of superuser: ')
         except NameError:
-            username = input("Insert username of superuser: ")
-            superuser_email = input("Insert email of superuser: ")
-        superuser_password = getpass("Insert password of superuser: ")
+            username = input('Insert username of superuser: ')
+            superuser_email = input('Insert email of superuser: ')
+        superuser_password = getpass('Insert password of superuser: ')
         admin = User(
             username=username, password=superuser_password, admin=True
         )
-        admin.fullname="Flask Superuser"
-        admin.email=superuser_email
+        admin.fullname = 'Flask Superuser'
+        admin.email = superuser_email
         self.__db.session.add(admin)
         self.__db.session.commit()
-        print("Done")
+        print('Done')
         return 0

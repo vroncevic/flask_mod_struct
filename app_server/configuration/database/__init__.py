@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      __init__.py
  Copyright
@@ -17,20 +17,20 @@
      along with this program. If not, see <http://www.gnu.org/licenses/>.
  Info
      Define class BaseConfig with attribute(s) and method(s).
-"""
+'''
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class BaseConfig(object):
-    """
+    '''
         Define class BaseConfig with attribute(s) and method(s).
         Base initial configuration for database.
         It defines:
@@ -39,6 +39,6 @@ class BaseConfig(object):
                 | SQLALCHEMY_TRACK_MODIFICATIONS - Requires extra memory (True)
             :methods:
                 | None
-    """
+    '''
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False

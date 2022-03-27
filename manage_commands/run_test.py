@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      run_test.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class RunTest with attribute(s) and method(s).
      Create initial data and insert to database.
-"""
+'''
 
 import sys
 
@@ -26,21 +26,21 @@ try:
     import unittest
     from flask_script import Command
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class RunTest(Command):
-    """
+    '''
         Define class RunTest with attribute(s) and method(s).
         Run tests.
         It defines:
@@ -50,26 +50,26 @@ class RunTest(Command):
             :methods:
                 | __init__ - Initial constructor
                 | run - Run tests
-    """
+    '''
 
     def __init__(self):
-        """
+        '''
             Initial constructor
 
             :exceptions: None
-        """
+        '''
         super(RunTest, self).__init__()
 
     def run(self):
-        """
+        '''
             Run testes
 
             :return: 0 for success else 1
             :rtype: <int>
             :exceptions: None
-        """
+        '''
         tests = unittest.TestLoader().discover(
-            "app_server/tests", pattern="test*.py"
+            'app_server/tests', pattern='test*.py'
         )
         result = unittest.TextTestRunner(verbosity=2).run(tests)
         if result.wasSuccessful():

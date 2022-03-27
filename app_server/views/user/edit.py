@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      edit.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class Edit with attribute(s) and method(s).
      View for edit user data.
-"""
+'''
 
 import sys
 
@@ -30,21 +30,21 @@ try:
     from app_server.models.model_user import User
     from app_server.forms.user.edit import UserEditForm
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class Edit(MethodView):
-    """
+    '''
         Define class Edit with attribute(s) and method(s).
         Define view for edit user data.
         It defines:
@@ -54,13 +54,13 @@ class Edit(MethodView):
                 | methods - Handler methods
             :methods:
                 | dispatch_request - Method view for edit user data
-    """
+    '''
 
-    methods = ["GET", "POST"]
+    methods = ['GET', 'POST']
     decorators = [login_required]
 
     def dispatch_request(self, username):
-        """
+        '''
             Method view for edit user data
 
             :param username: System username
@@ -68,7 +68,7 @@ class Edit(MethodView):
             :return: Value of the view or error handler
             :rtype: <View>
             :exceptions: None
-        """
+        '''
         user = User.query.filter_by(username=username).first()
         form = UserEditForm(request.form)
         form.fullname.data = user.fullname
@@ -79,18 +79,18 @@ class Edit(MethodView):
         else:
             form.admin.data = False
         if form.validate_on_submit():
-            user.fullname = request.form.get("fullname")
-            user.username = request.form.get("username")
-            user.email = request.form.get("email")
-            if request.form.get("password"):
+            user.fullname = request.form.get('fullname')
+            user.username = request.form.get('username')
+            user.email = request.form.get('email')
+            if request.form.get('password'):
                 user.password = bcrypt.generate_password_hash(
-                    request.form.get("password"),
-                    app.config.get("BCRYPT_LOG_ROUNDS")
+                    request.form.get('password'),
+                    app.config.get('BCRYPT_LOG_ROUNDS')
                 )
-            if request.form.get("admin"):
+            if request.form.get('admin'):
                 user.admin = True
             else:
                 user.admin = False
             db.session.commit()
-            return redirect(url_for("user.administration"))
-        return render_template("user/edit.html", user=username, form=form)
+            return redirect(url_for('user.administration'))
+        return render_template('user/edit.html', user=username, form=form)

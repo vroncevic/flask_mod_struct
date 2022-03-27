@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      contact.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class Contact with attribute(s) and method(s).
      View for contact user data.
-"""
+'''
 
 import sys
 
@@ -29,21 +29,21 @@ try:
     from app_server import app, mail
     from app_server.forms.base.contact import ContactForm
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class Contact(View):
-    """
+    '''
         Define class Contact with attribute(s) and method(s).
         Define view for contact page.
         It defines:
@@ -52,30 +52,30 @@ class Contact(View):
                 | methods - Handler methods
             :methods:
                 | dispatch_request - Method view for contact page
-    """
+    '''
 
-    methods = ["GET", "POST"]
+    methods = ['GET', 'POST']
 
     def dispatch_request(self):
-        """
+        '''
             Method view for contact page
 
             :return: Value of the view or error handler
             :rtype: <View>
             :exceptions: None
-        """
+        '''
         form = ContactForm(request.form)
         if form.validate_on_submit():
-            subject = request.form.get("subject")
-            message = request.form.get("message")
-            name = request.form.get("name")
-            email = request.form.get("email")
+            subject = request.form.get('subject')
+            message = request.form.get('message')
+            name = request.form.get('name')
+            email = request.form.get('email')
             msg = Message(
                 subject=subject,
-                sender=app.config.get("MAIL_USERNAME"),
-                recipients=[app.config.get("MAIL_RECIPIENT")]
+                sender=app.config.get('MAIL_USERNAME'),
+                recipients=[app.config.get('MAIL_RECIPIENT')]
             )
-            msg.body = "{0}\n{1}\n{2}".format(message, name, email)
+            msg.body = '{0}\n{1}\n{2}'.format(message, name, email)
             mail.send(msg)
-            flash("Message sent!", "success")
-        return render_template("base/contact.html", form=form)
+            flash('Message sent!', 'success')
+        return render_template('base/contact.html', form=form)

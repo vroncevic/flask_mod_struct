@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      base_query.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class SQLAlchemyBaseQuery with attribute(s) and method(s).
      Create database engine.
-"""
+'''
 
 import sys
 
@@ -30,21 +30,21 @@ try:
     from sqlalchemy.ext.declarative import declarative_base
     from sqlalchemy.orm import sessionmaker
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class SQLAlchemyBaseQuery(object):
-    """
+    '''
         Define class SQLAlchemyBaseQuery with attribute(s) and method(s).
         Create database engine.
         It defines:
@@ -55,7 +55,7 @@ class SQLAlchemyBaseQuery(object):
                 | Session - Connection session
             :methods:
                 | None
-    """
+    '''
 
     Base = declarative_base()
     Engine = create_engine(DevelopmentConfig.SQLALCHEMY_DATABASE_URI)

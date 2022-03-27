@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
+'''
  Module
      contact.py
  Copyright
@@ -18,7 +18,7 @@
  Info
      Define class ContactForm with attribute(s) and method(s).
      Form for contact user data.
-"""
+'''
 
 import sys
 
@@ -28,21 +28,21 @@ try:
     from wtforms.validators import DataRequired, Email
     from wtforms.widgets import TextArea
 except ImportError as error_message:
-    MESSAGE = "\n{0}\n{1}\n".format(__file__, error_message)
+    MESSAGE = '\n{0}\n{1}\n'.format(__file__, error_message)
     sys.exit(MESSAGE)  # Force close python ATS ##############################
 
-__author__ = "Vladimir Roncevic"
-__copyright__ = "Copyright 2017, Free software to use and distributed it."
-__credits__ = ["Vladimir Roncevic"]
-__license__ = "GNU General Public License (GPL)"
-__version__ = "1.1.0"
-__maintainer__ = "Vladimir Roncevic"
-__email__ = "elektron.ronca@gmail.com"
-__status__ = "Updated"
+__author__ = 'Vladimir Roncevic'
+__copyright__ = 'Copyright 2017, Free software to use and distributed it.'
+__credits__ = ['Vladimir Roncevic']
+__license__ = 'GNU General Public License (GPL)'
+__version__ = '1.1.0'
+__maintainer__ = 'Vladimir Roncevic'
+__email__ = 'elektron.ronca@gmail.com'
+__status__ = 'Updated'
 
 
 class ContactForm(FlaskForm):
-    """
+    '''
         Define class ContactForm with attribute(s) and method(s).
         Define contact form (sending an email).
         It defines:
@@ -54,11 +54,11 @@ class ContactForm(FlaskForm):
                 | message - Message body
             :methods:
                 | None
-    """
+    '''
 
-    name = StringField("Name", validators=[DataRequired()])
-    email = StringField("Email", validators=[DataRequired(), Email()])
-    subject = StringField("Subject", validators=[DataRequired()])
+    name = StringField('Name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    subject = StringField('Subject', validators=[DataRequired()])
     message = StringField(
-        "Message", widget=TextArea(), validators=[DataRequired()]
+        'Message', widget=TextArea(), validators=[DataRequired()]
     )
