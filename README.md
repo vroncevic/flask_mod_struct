@@ -1,4 +1,4 @@
-<img align="right" src="https://raw.githubusercontent.com/vroncevic/flask_mod_struct/dev/docs/flask_mod_struct_logo.png" width="25%">
+<img align="right" src="https://raw.githubusercontent.com/vroncevic/flask_mod_struct/master/docs/flask_mod_struct_logo.png" width="25%">
 
 # Flask Module Structured Framework
 
