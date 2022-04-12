@@ -26,7 +26,7 @@
             <a href="#" class="icon icon-home"> flask_mod_struct
           </a>
               <div class="version">
-                1.1.0
+                1.3.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -72,7 +72,7 @@
 <p>The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.</p>
-<p><a class="reference external" href="https://github.com/vroncevic/flask_mod_struct/workflows/Python%20package%20flask_mod_struct/badge.svg?branch=master"><img alt="Python package" src="https://github.com/vroncevic/flask_mod_struct/workflows/Python%20package%20flask_mod_struct/badge.svg" /></a> <a class="reference external" href="https://github.com/vroncevic/flask_mod_struct/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/vroncevic/flask_mod_struct.svg" /></a> <a class="reference external" href="https://flask_mod_struct.readthedocs.io/projects/flask_mod_struct/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/flask_mod_struct/badge/?version=latest" /></a> <a class="reference external" href="https://github.com/vroncevic/flask_mod_struct/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/vroncevic/flask_mod_struct.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_py_checker.yml"><img alt="Python checker" src="https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_py_checker.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_package.yml"><img alt="Python package" src="https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_package.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/vroncevic/flask_mod_struct/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/vroncevic/flask_mod_struct.svg" /></a> <a class="reference external" href="https://flask-mod-struct.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/flask-mod-struct/badge/?version=latest" /></a> <a class="reference external" href="https://github.com/vroncevic/flask_mod_struct/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/vroncevic/flask_mod_struct.svg" /></a></p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents</span></p>
 <ul class="current">
@@ -93,25 +93,28 @@ cp -R /app_server/ /Flask/
 </pre></div>
 </div>
 <p>You can use Docker to create image/container.</p>
-<p><a class="reference external" href="https://github.com/vroncevic/flask_mod_struct/actions?query=workflow%3A%22flask_mod_struct+docker+checker%22"><img alt="GitHub docker checker" src="https://github.com/vroncevic/flask_mod_struct/workflows/flask_mod_struct%20docker%20checker/badge.svg" /></a></p>
+<p><a class="reference external" href="https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_docker_checker.yml"><img alt="GitHub docker checker" src="https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_docker_checker.yml/badge.svg" /></a></p>
 </div>
 <div class="section" id="dependencies">
 <h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h1>
 <p><strong>flask_mod_struct</strong> requires next modules and libraries</p>
-<ul class="simple">
-<li>Flask</li>
-<li>Flask-Migrate</li>
-<li>Flask-Script</li>
-<li>coverage</li>
-<li>WTForms</li>
-<li>Flask-Login</li>
-<li>Flask-BCrypt</li>
-<li>Flask-Bootstrap</li>
-<li>Flask-DebugToolbar</li>
-<li>Flask-SQLAlchemy</li>
-<li>Flask-Testing</li>
-<li>Flask-WTF</li>
-</ul>
+<blockquote>
+<div>alembic                           1.6.5
+Flask                             1.1.4
+Flask-Bcrypt                      1.0.1
+Flask-Bootstrap                   3.3.7.1
+Flask-Cors                        3.0.10
+Flask-DebugToolbar                0.13.1
+Flask-Login                       0.5.0
+Flask-Mail                        0.9.1
+Flask-Migrate                     2.6.0
+Flask-Script                      2.0.6
+Flask-SQLAlchemy                  2.5.1
+Flask-Testing                     0.8.1
+Flask-WTF                         0.14.3
+SQLAlchemy                        1.4.27
+Werkzeug                          1.0.1
+WTForms                           2.3.3</div></blockquote>
 </div>
 <div class="section" id="library-structure">
 <h1>Library structure<a class="headerlink" href="#library-structure" title="Permalink to this headline">¶</a></h1>
@@ -170,14 +173,6 @@ cp -R /app_server/ /Flask/
 │   │       ├── login.html
 │   │       ├── members.html
 │   │       └── register.html
-│   ├── tests/
-│   │   ├── base_query.py
-│   │   ├── helpers.py
-│   │   ├── __init__.py
-│   │   ├── sqlalchemy_query.py
-│   │   ├── test_config.py
-│   │   ├── test_main.py
-│   │   └── test_user.py
 │   └── views/
 │       ├── base/
 │       │   ├── about.py
@@ -198,10 +193,7 @@ cp -R /app_server/ /Flask/
 │   ├── create_data.py
 │   ├── create_superuser.py
 │   ├── drop_database.py
-│   ├── __init__.py
-│   ├── orm_test.py
-│   ├── run_coverage.py
-│   └── run_test.py
+│   └── __init__.py
 └── manage.py
 </pre></div>
 </div>

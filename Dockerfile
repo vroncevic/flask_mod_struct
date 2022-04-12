@@ -22,13 +22,12 @@ RUN DEBIAN_FRONTEND=noninteractive \
     tree \
     htop \
     wget \
+    curl \
     unzip \
     ca-certificates \
     openssl \
     python \
     python-dev \
-    python3 \
-    python3-dev \
     libyaml-dev
 
 RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
@@ -37,15 +36,8 @@ RUN python2 -m pip install --upgrade setuptools
 RUN python2 -m pip install --upgrade pip
 RUN python2 -m pip install --upgrade build
 RUN rm -f get-pip.py
-RUN wget https://bootstrap.pypa.io/get-pip.py
-RUN python3 get-pip.py
-RUN python3 -m pip install --upgrade setuptools
-RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install --upgrade build
-RUN rm -f get-pip.py
 COPY requirements.txt /
 RUN pip2 install -r requirements.txt
-RUN pip3 install -r requirements.txt
 RUN rm -f requirements.txt
 RUN mkdir /manage_commands/
 COPY manage_commands /manage_commands/
