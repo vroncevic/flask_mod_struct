@@ -10,7 +10,7 @@ The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.
 
-[![flask_mod_struct py checker](https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_py_checker.yml/badge.svg)](https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_py_checker.yml) [![flask_mod_struct python package](https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_package.yml/badge.svg)](https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_package.yml) [![GitHub issues open](https://img.shields.io/github/issues/vroncevic/flask_mod_struct.svg)](https://github.com/vroncevic/flask_mod_struct/issues) [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/flask_mod_struct.svg)](https://github.com/vroncevic/flask_mod_struct/graphs/contributors)
+[![flask_mod_struct python checker](https://img.shields.io/github/workflow/status/vroncevic/flask_mod_struct/flask_mod_struct_python_checker?style=flat&label=flask_mod_struct%20python%20checker)](https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_python_checker.yml) [![flask_mod_struct package checker](https://img.shields.io/github/workflow/status/vroncevic/flask_mod_struct/flask_mod_struct_package_checker?style=flat&label=flask_mod_struct%20package%20checker)](https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_package_checker.yml) [![GitHub issues open](https://img.shields.io/github/issues/vroncevic/flask_mod_struct.svg)](https://github.com/vroncevic/flask_mod_struct/issues) [![GitHub contributors](https://img.shields.io/github/contributors/vroncevic/flask_mod_struct.svg)](https://github.com/vroncevic/flask_mod_struct/graphs/contributors)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -28,9 +28,13 @@ other information that should be provided before the modules are installed.
 
 ### Installation
 
+Used next development environment
+
+![debian linux os](https://raw.githubusercontent.com/vroncevic/flask_mod_struct/dev/docs/debtux.png)
+
 Navigate to **[release page](https://github.com/vroncevic/flask_mod_struct/releases)** download and extract release archive 📦.
 
-To install modules type the following
+To install **flask_func_struct_vue** 📦 type the following
 
 ```bash
 tar xvzf flask_mod_struct-x.y.z.tar.gz
@@ -43,7 +47,7 @@ cp -R /app_server/ /Flask/
 
 Or You can use Dockerfile to create image/container 🚢.
 
-[![flask_mod_struct docker checker](https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_docker_checker.yml/badge.svg)](https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_docker_checker.yml)
+[![flask_mod_struct docker checker](https://img.shields.io/github/workflow/status/vroncevic/flask_mod_struct/flask_mod_struct_docker_checker?style=flat&label=flask_mod_struct%20docker%20checker)](https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_docker_checker.yml)
 
 ### Usage
 
@@ -204,7 +208,7 @@ app_server/
 
 ### Docs
 
-[![Documentation Status](https://readthedocs.org/projects/flask-mod-struct/badge/?version=latest)](https://flask-mod-struct.readthedocs.io/en/latest/?badge=latest) [![pages-build-deployment](https://github.com/vroncevic/flask_mod_struct/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/vroncevic/flask_mod_struct/actions/workflows/pages/pages-build-deployment)
+[![Documentation Status](https://readthedocs.org/projects/flask-mod-struct/badge/?version=latest)](https://flask-mod-struct.readthedocs.io/en/latest/?badge=latest)
 
 📗 More documentation and info at
 
@@ -213,7 +217,7 @@ app_server/
 
 ### Contributing
 
-[Contributing to flask_mod_struct](CONTRIBUTING.md)
+🌎 🌍 🌏 [Contributing to flask_mod_struct](CONTRIBUTING.md)
 
 ### Copyright and licence
 

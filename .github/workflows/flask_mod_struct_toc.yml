@@ -1,11 +1,11 @@
-name: TOC Generator flask_func_struct
+name: flask_func_struct_toc
 on:
   push:
     paths:
       - '**.md'
 jobs:
   generateTOC:
-    name: TOC Generator
+    name: flask_func_struct_toc
     runs-on: ubuntu-latest
     steps:
       - uses: technote-space/toc-generator@v2
