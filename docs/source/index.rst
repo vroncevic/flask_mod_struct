@@ -1,29 +1,29 @@
 Flask Module Structured Framework
 ----------------------------------
 
-**flask_mod_struct** is framework for Flask web apps.
+☯️ **flask_mod_struct** is framework for Flask web apps.
 
-Developed in `python <https://www.python.org/>`_ code.
+Developed in 🐍 `python <https://www.python.org/>`_ code.
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.
 
-|Python checker| |Python package| |GitHub issues| |Documentation Status| |GitHub contributors|
+|python checker| |python package| |github issues| |documentation status| |github contributors|
 
-.. |Python checker| image:: https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_py_checker.yml/badge.svg
-   :target: https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_py_checker.yml
+.. |python checker| image:: https://img.shields.io/github/workflow/status/vroncevic/flask_mod_struct/flask_mod_struct_python_checker?style=flat&label=flask_mod_struct%20python%20checker
+   :target: https://img.shields.io/github/workflow/status/vroncevic/flask_mod_struct/flask_mod_struct_python_checker
 
-.. |Python package| image:: https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_package.yml/badge.svg
-   :target: https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_package.yml
+.. |python package| image:: https://img.shields.io/github/workflow/status/vroncevic/flask_mod_struct/flask_mod_struct_package_checker?style=flat&label=flask_mod_struct%20package%20checker
+   :target: https://img.shields.io/github/workflow/status/vroncevic/flask_mod_struct/flask_mod_struct_package_checker
 
-.. |GitHub issues| image:: https://img.shields.io/github/issues/vroncevic/flask_mod_struct.svg
+.. |github issues| image:: https://img.shields.io/github/issues/vroncevic/flask_mod_struct.svg
    :target: https://github.com/vroncevic/flask_mod_struct/issues
 
-.. |GitHub contributors| image:: https://img.shields.io/github/contributors/vroncevic/flask_mod_struct.svg
+.. |github contributors| image:: https://img.shields.io/github/contributors/vroncevic/flask_mod_struct.svg
    :target: https://github.com/vroncevic/flask_mod_struct/graphs/contributors
 
-.. |Documentation Status| image:: https://readthedocs.org/projects/flask-mod-struct/badge/?version=latest
+.. |documentation status| image:: https://readthedocs.org/projects/flask-mod-struct/badge/?version=latest
    :target: https://flask-mod-struct.readthedocs.io/en/latest/?badge=latest
 
 .. toctree::
@@ -35,11 +35,11 @@ other information that should be provided before the modules are installed.
 Installation
 -------------
 
-Navigate to release `page`_ download and extract release archive.
+Navigate to release `page`_ download and extract release archive 📦.
 
 .. _page: https://github.com/vroncevic/flask_mod_struct/releases
 
-To install this set of modules type the following
+To install **flask_mod_struct** 📦 type the following
 
 .. code-block:: bash
 
@@ -50,12 +50,12 @@ To install this set of modules type the following
     cp -R /manage_commands/ /FlaskApp/
     cp -R /app_server/ /Flask/
 
-You can use Docker to create image/container.
+You can use Docker to create image/container 🚢.
 
-|GitHub docker checker|
+|github docker checker|
 
-.. |GitHub docker checker| image:: https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_docker_checker.yml/badge.svg
-   :target: https://github.com/vroncevic/flask_mod_struct/actions/workflows/flask_mod_struct_docker_checker.yml
+.. |github docker checker| image:: https://img.shields.io/github/workflow/status/vroncevic/flask_mod_struct/flask_mod_struct_docker_checker?style=flat&label=flask_mod_struct%20docker%20checker
+   :target: https://img.shields.io/github/workflow/status/vroncevic/flask_mod_struct/flask_mod_struct_docker_checker
 
 Dependencies
 -------------
@@ -84,7 +84,7 @@ Library structure
 
 **flask_mod_struct** is based on OOP
 
-Framework structure
+🧰 Framework structure
 
 .. code-block:: bash
 
@@ -167,13 +167,13 @@ Framework structure
 Copyright and licence
 ----------------------
 
-|License: GPL v3| |License: Apache 2.0|
+|license: gpl v3| |license: apache 2.0|
 
-.. |License: GPL v3| image:: https://img.shields.io/badge/License-GPLv3-blue.svg
+.. |license: gpl v3| image:: https://img.shields.io/badge/license-gplv3-blue.svg
    :target: https://www.gnu.org/licenses/gpl-3.0
 
-.. |License: Apache 2.0| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
-   :target: https://opensource.org/licenses/Apache-2.0
+.. |license: apache 2.0| image:: https://img.shields.io/badge/license-apache%202.0-blue.svg
+   :target: https://opensource.org/licenses/apache-2.0
 
 Copyright (C) 2017 by `vroncevic.github.io/flask_mod_struct <https://vroncevic.github.io/flask_mod_struct>`_
 
@@ -181,16 +181,16 @@ Copyright (C) 2017 by `vroncevic.github.io/flask_mod_struct <https://vroncevic.g
 it under the same terms as Python itself, either Python version 2.x/3.x or,
 at your option, any later version of Python 3 you may have available.
 
-Lets help and support PSF.
+🌎 🌍 🌏 Lets help and support PSF.
 
-|Python Software Foundation|
+|python software foundation|
 
-.. |Python Software Foundation| image:: https://raw.githubusercontent.com/vroncevic/flask_mod_struct/dev/docs/psf-logo-alpha.png
+.. |python software foundation| image:: https://raw.githubusercontent.com/vroncevic/flask_mod_struct/dev/docs/psf-logo-alpha.png
    :target: https://www.python.org/psf/
 
-|Donate|
+|donate|
 
-.. |Donate| image:: https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif
+.. |donate| image:: https://www.paypalobjects.com/en_us/i/btn/btn_donatecc_lg.gif
    :target: https://psfmember.org/index.php?q=civicrm/contribute/transact&reset=1&id=2
 
 Indices and tables

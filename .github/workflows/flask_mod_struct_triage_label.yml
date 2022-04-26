@@ -1,16 +1,16 @@
-name: flask_mod_struct_triage
+name: flask_mod_struct_triage_label
 on:
   issues:
     types: [opened]
 jobs:
-  commentOnNewIssues:
-    name: flask_mod_struct_triage
+  applyTriageLabel:
+    name: flask_mod_struct_triage_label
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: flask_mod_struct_triage
+      - name: flask_mod_struct_triage_label
         uses: actions/github@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: comment "[flask_mod_struct] should be supported for Python 2.7"
+          args: label triage
